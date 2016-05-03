@@ -55,7 +55,7 @@ class Clients_ClientsController extends Zend_Controller_Action
                 $session->setClient($client[0]["first_name"] . " " . $client[0]["last_name"]);
                 $session->setID($client[0]["id"]);
 
-                $this->redirect("/clinic");
+                $this->redirect("/appointments/new");
 
             } else {
                 $this->view->form   = $form;

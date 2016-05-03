@@ -27,65 +27,7 @@
 		</button>
 	</div>
 
-	<?php if (count($this->appointment) == 0) { ?>
-	<div class="row">
-		<div class="col-lg-3 col-md-6 col-sm-6 margin_10 animated fadeInLeftBig">
-			<!-- Trans label pie charts strats here-->
-			<button class="redbg no-radius" id="new_appointment">
-				<div class="panel-body squarebox square_boxs">
-					<div class="col-xs-12 pull-left nopadmar">
-						<div class="row">
-							<div class="square_box col-xs-4 text-right">
-								<div class="number"><?=$this->translate(gettext("New Appointment"));?></div>
-							</div>
-							<i class="livicon  pull-right" data-name="folder-add" data-l="true" data-c="#fff" data-hc="#fff" data-s="70"></i>
-						</div>
 
-					</div>
-				</div>
-			</button>
-		</div>
-		<?php } else { ?>
-			<div class="row">
-				<div class="col-lg-3 col-md-6 col-sm-6 margin_10 animated fadeInLeftBig">
-					<!-- Trans label pie charts strats here-->
-					<button class="goldbg no-radius" id="view_appointment">
-						<div class="panel-body squarebox square_boxs">
-							<div class="col-xs-12 pull-left nopadmar">
-								<div class="row">
-									<div class="square_box col-xs-4 text-right">
-										<div class="number"><?=$this->translate(gettext("View Appointment"));?></div>
-									</div>
-									<i class="livicon  pull-right" data-name="eye-open" data-l="true" data-c="#fff" data-hc="#fff" data-s="70"></i>
-								</div>
-
-							</div>
-						</div>
-					</button>
-				</div>
-
-		<?php } ?>
-		<div class="row">
-			<div class="col-lg-3 col-md-6 col-sm-6 margin_10 animated fadeInLeftBig">
-				<!-- Trans label pie charts strats here-->
-				<button class="goldbg no-radius" id="rps_search-client">
-					<div class="panel-body squarebox square_boxs">
-						<div class="col-xs-12 pull-left nopadmar">
-							<div class="row">
-								<div class="square_box col-xs-4 text-right">
-									<?php if ($this->authClient): ?>
-										<div class="number"><?=$this->translate(gettext("Client Home"));?></div>
-									<?php else: ?>
-										<div class="number"><?=$this->translate(gettext("Search Client"));?></div>
-									<?php endif; ?>
-								</div>
-								<i class="livicon  pull-right" data-name="address-book" data-l="true" data-c="#fff" data-hc="#fff" data-s="70"></i>
-							</div>
-
-						</div>
-					</div>
-				</button>
-			</div>
 
 			<div class="row">
 				<div class="col-lg-3 col-md-6 col-sm-6 margin_10 animated fadeInLeftBig">

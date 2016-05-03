@@ -73,7 +73,7 @@ class Clients_Form_Patients extends Twitter_Form
             gettext("South American") => gettext("South American"),
             gettext("Other") => gettext("Other"),
         ));
-        $or->setAttribs(array('class'=> "form-control"));
+        $or->setAttribs(array('class'=> "form-control", 'onchange'=>'setOriginAlert("'.gettext("Atention!").'","'.gettext("Make 2 joules below the basic skin type! ").'")'));
         $this->addElement($or);
 
         $nt = new Zend_Form_Element_Textarea('notes');
@@ -82,7 +82,7 @@ class Clients_Form_Patients extends Twitter_Form
         $this->addElement($nt);
 
         $submit = new Zend_Form_Element_Submit('submit');
-        $submit->setLabel('Create User');
+        $submit->setLabel('Next ->');
         $submit->setAttrib('class', 'btn btn-clinik');
         $this->addElement($submit);
 
