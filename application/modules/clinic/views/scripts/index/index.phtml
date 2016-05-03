@@ -73,7 +73,11 @@
 						<div class="col-xs-12 pull-left nopadmar">
 							<div class="row">
 								<div class="square_box col-xs-4 text-right">
-									<div class="number"><?=$this->translate(gettext("Search Client"));?></div>
+									<?php if ($this->authClient): ?>
+										<div class="number"><?=$this->translate(gettext("Client Home"));?></div>
+									<?php else: ?>
+										<div class="number"><?=$this->translate(gettext("Search Client"));?></div>
+									<?php endif; ?>
 								</div>
 								<i class="livicon  pull-right" data-name="address-book" data-l="true" data-c="#fff" data-hc="#fff" data-s="70"></i>
 							</div>

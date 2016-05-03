@@ -36,6 +36,8 @@ class Clinic_IndexController extends Zend_Controller_Action
      // $consultas = new Appointments_Model_Appointments();
       //$this->view->appointment = $consultas->getLastAppByID($id);
 
+        $this->view->authClient =  $this->identity;
+
     }
 
 
