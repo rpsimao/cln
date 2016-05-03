@@ -235,6 +235,7 @@
             <modelFile modelName="Appointments"/>
             <dbTableDirectory>
               <dbTableFile dbTableName="Appointments"/>
+              <dbTableFile dbTableName="Alerts"/>
             </dbTableDirectory>
           </modelsDirectory>
           <servicesDirectory enabled="false"/>

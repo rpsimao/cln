@@ -9,14 +9,16 @@
 class RPS_Aux_ClientsAlerts
 {
 
-private $clients;
-protected $id;
+    private $clients;
+    private $dbalerts;
+    protected $id;
 
     
     
-    public function __construct(Clients_Model_Clients $clients)
+    public function __construct(Clients_Model_Clients $clients, Appointments_Model_Alerts $dbalerts)
     {
         $this->clients = $clients;
+        $this->dbalerts = $dbalerts;
     }
 
 
@@ -41,13 +43,14 @@ protected $id;
     {
 
         $info = $this->clients->findByID($this->getId());
+        $dbAl = $this->dbalerts->getOrigin();
 
-        $origin = array("Portuguese", "Spanish", "Italian", "Maghrebian", "South American");
+        $origin = explode(";", $dbAl);
 
 
         switch (TRUE){
 
-            case  $info[0]["age"] >= 45:
+            case  $info[0]["age"] >= $this->dbalerts->getAge():
                 return TRUE;
 
             case in_array($info[0]["origin"], $origin):

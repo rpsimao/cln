@@ -41,7 +41,8 @@ class Appointments_NewController extends Zend_Controller_Action
         
 
         $clientData = new Clients_Model_Clients();
-        $alerts = new RPS_Aux_ClientsAlerts($clientData);
+        $dbAlerts = new Appointments_Model_Alerts();
+        $alerts = new RPS_Aux_ClientsAlerts($clientData, $dbAlerts);
         $alerts->setId($client->getSessionID());
         
 
