@@ -1,0 +1,17 @@
+.DS_Store
+.svn/
+.svn
+._*
+.cache
+.idea
+.project
+.settings
+.tmproj
+*.esproj
+*.sublime-project
+*.sublime-workspace
+nbproject
+Thumbs.db
+docs/
+tests/
+build/

@@ -1,0 +1,80 @@
+	<div class="row">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+			<div class="rps_frame rps_user_frame text-center">
+				<i class="fa fa-user fa-5x" style="color: darkgray"></i>
+			</div>
+
+
+		</div>
+		<div class="col-lg-3  col-sm-4 col-xs-3" >
+
+			<table class="table table-responsive table-hover table-bordered table-condensed">
+				<thead class="rps-thead">
+				<tr>
+					<th><?=$this->translate(gettext("Name"));?></th>
+					<th><?=$this->translate(gettext("Age"));?></th>
+				</tr>
+				</thead>
+				<tbody style="background-color: #ffffff">
+					<tr>
+						<td><?=$this->escape($this->client[0]["first_name"]) . " " . $this->escape($this->client[0]["last_name"]);?></td>
+						<td><?=$this->escape($this->client[0]["age"]);?></td>
+					</tr>
+
+				</tbody>
+			</table>
+
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-6 col-xs-6">
+
+		<?php if (count($this->last) == 0) { ?>
+			<a href="/appointments/new" class="btn redbg btn-sm btn-responsive btn-lg" role="button" style="width: 150px">
+				<span class="glyphicon glyphicon-folder-open"></span>
+				<br>
+				<?=$this->translate(gettext("New Appointment"));?>
+			</a>
+			<br>
+		<?php } ?>
+
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-8" style="margin-top: 20px">
+
+			<div class="panel panel-clinik" style="max-width: 280px">
+				<div class="panel-heading">
+					<h4 class="panel-title"><?=$this->translate(gettext("Appointment"))?></h4>
+				</div>
+				<div class="panel-body">
+					<p>
+					<?php if (count($this->last) > 0): ?>
+					<table class="table table-responsive table-hover">
+						<thead>
+							<tr>
+								<th><?=$this->translate(gettext("Date"));?></th>
+								<th><?=$this->translate(gettext("View"));?></th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php foreach ($this->last as $one) :?>
+						<tr>
+							<td><?=$one["date_app"];?></td>
+							<td><a class="btn btn-primary btn-xs" href="/appointments/edit/<?=$one["id"];?>"><i class="fa fa-eye"></i></a></td>
+						</tr>
+						<?php endforeach;?>
+
+
+						</tbody>
+					</table>
+					<?php else: ?>
+					<p><?=$this->translate(gettext("There are no appointments"));?></p>
+					<?php endif;?>
+					</p>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>

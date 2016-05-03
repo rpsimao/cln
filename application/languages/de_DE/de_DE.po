@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-01-20 10:16+0000\n"
+"PO-Revision-Date: 2016-01-20 10:16+0000\n"
+"Last-Translator: Ricardo Simão <ricardo.simao@fterceiro.pt>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _;setLabel\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: modules/clinic/controllers/IndexController.php:14
+#: modules/users/controllers/AdduserController.php:14
+#: modules/users/controllers/NewuserController.php:16
+msgid "You are not allowed to see this resource. Please login."
+msgstr ""
+
+#: modules/default/forms/Login.php:14
+msgid "Users_Form_Login_Username"
+msgstr ""
+
+#: modules/default/forms/Login.php:20
+msgid "Users_Form_Login_Password"
+msgstr ""
+
+#: modules/default/forms/Login.php:26
+msgid "Users_Form_Login_Submit"
+msgstr ""
+
+#: modules/users/forms/Patients.php:16
+msgid "First Name:"
+msgstr ""
+
+#: modules/users/forms/Patients.php:21
+msgid "Last Name:"
+msgstr ""
+
+#: modules/users/forms/Patients.php:26
+msgid "Birthdate:"
+msgstr ""
+
+#: modules/users/forms/Patients.php:32
+msgid "Address:"
+msgstr ""
+
+#: modules/users/forms/Patients.php:37
+msgid "Postal-Code:"
+msgstr ""
+
+#: modules/users/forms/Patients.php:42
+msgid "City:"
+msgstr ""
+
+#: modules/users/forms/Patients.php:47
+msgid "Phone:"
+msgstr ""
+
+#: modules/users/forms/Patients.php:52
+msgid "Mobile:"
+msgstr ""
+
+#: modules/users/forms/Patients.php:57
+msgid "Email:"
+msgstr ""
+
+#: modules/users/forms/Patients.php:63
+msgid "Origin:"
+msgstr ""
+
+#: modules/users/forms/Patients.php:66
+msgid "Swiss"
+msgstr ""
+
+#: modules/users/forms/Patients.php:67
+msgid "Portuguese"
+msgstr ""
+
+#: modules/users/forms/Patients.php:68
+msgid "Spanish"
+msgstr ""
+
+#: modules/users/forms/Patients.php:69
+msgid "German"
+msgstr ""
+
+#: modules/users/forms/Patients.php:70
+msgid "Italian"
+msgstr ""
+
+#: modules/users/forms/Patients.php:71
+msgid "English"
+msgstr ""
+
+#: modules/users/forms/Patients.php:72
+msgid "Other"
+msgstr ""
+
+#: modules/users/forms/Patients.php:78
+msgid "Notes:"
+msgstr ""
+
+#: modules/users/forms/Patients.php:83
+msgid "Create User"
+msgstr ""
+
+#: modules/clinic/views/scripts/index/index.phtml:9
+#: modules/users/views/scripts/adduser/index.phtml:9
+#: modules/users/views/scripts/newuser/index.phtml:7
+msgid "New Client"
+msgstr ""
+
+#: modules/clinic/views/scripts/index/index.phtml:27
+msgid "New Appointment"
+msgstr ""
+
+#: modules/clinic/views/scripts/index/index.phtml:45
+msgid "Search Client"
+msgstr ""
+
+#: modules/clinic/views/scripts/index/index.phtml:63
+msgid "Search Appointment"
+msgstr ""
