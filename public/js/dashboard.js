@@ -1,8 +1,4 @@
-$(function() {
-
-
-      //sparkline
-      /*
+ //sparkline
         $("#sparkline_bar").sparkline([9, 11, 12, 13, 12, 13, 10, 14, 13, 11, 11, 12, 11, 11, 10, 12, 11], {
             type: 'bar',
             width: '100',
@@ -17,10 +13,10 @@ $(function() {
             width: '100',
             height: '55',
             fillColor:'#fff',
-
+           
             lineColor: '#fff'
-        });*/
-
+        });            
+    
 /* Calendar */
 
        function ini_events(ele) {
@@ -76,8 +72,8 @@ $(function() {
                 title: 'Long Event',
                 start: new Date(y, m, d - 8),
                 end: new Date(y, m, d - 4),
-                backgroundColor: "#F89A14",
-                borderColor: "#F89A14"
+                backgroundColor: "#F89A14", 
+                borderColor: "#F89A14"  
                 },
 
                  {
@@ -100,8 +96,8 @@ $(function() {
                 title: 'Client Meeting',
                 start: new Date(y, m,  28),
                 end: new Date(y, m,30),
-                backgroundColor: "#A9B6BC",
-                borderColor: "#A9B6BC"
+                backgroundColor: "#A9B6BC", 
+                borderColor: "#A9B6BC"  
                 }],
             editable: true,
             droppable: true,
@@ -211,7 +207,7 @@ var data = [], totalPoints = 300;
         }
     });
 
-
+    
      if($("#realtimechart").length)
     {
         var options = {
@@ -221,7 +217,7 @@ var data = [], totalPoints = 300;
             xaxis: { show: false },
             colors: ["rgba(65,139,202,0.5)"],
             grid: { tickColor: "#dddddd",
-                    borderWidth: 0
+                    borderWidth: 0 
             },
         };
         var plot = $.plot($("#realtimechart"), [ getRandomData() ], options);
@@ -229,13 +225,13 @@ var data = [], totalPoints = 300;
             plot.setData([ getRandomData() ]);
             // since the axes don't change, we don't need to call plot.setupGrid()
             plot.draw();
-
+            
             setTimeout(update, updateInterval);
         }
 
         update();
     }
-    // top menu
+    // top menu 
     var options = {  
         useEasing: false,
           useGrouping: false,
@@ -284,11 +280,10 @@ var data = [], totalPoints = 300;
                 the_post.css("cursor", "pointer");
             }
         }
-});
 //Percentage Monitor
           $(document).ready(function()
     {
-
+        
          /** BEGIN WIDGET PIE FUNCTION **/
         if ($('.widget-easy-pie-1').length > 0)
             {
@@ -326,8 +321,8 @@ var data = [], totalPoints = 300;
                 });
             }
         /** END WIDGET PIE FUNCTION **/
-
-
+    
+    
     });
 
 //world map
@@ -351,15 +346,16 @@ $(function(){
         {latLng: [47.14, 9.52], name: 'Liechtenstein- 52 views'},
         {latLng: [12.05, -61.75], name: 'Grenada- 5 views'},
         {latLng: [41.90, 12.45], name: 'Vatican City- 1254 views'},
-        {latLng: [50, 0], name: 'France - 5254 views'},
+        {latLng: [50, 0], name: 'France - 5254 views'},   
         {latLng: [0, 120], name: 'Indonesia - 525 views'},
-        {latLng: [-25, 130], name: 'Australia - 4586 views'},
-        {latLng: [0, 20], name: 'Africa - 1 views'},
-        {latLng: [35, 100], name: 'China -29 views'},
-        {latLng: [46, 105], name: 'Mongolia - 2123 views'},
-        {latLng: [40, 70], name: 'Kyrgiztan - 24446 views'},
+        {latLng: [-25, 130], name: 'Australia - 4586 views'},    
+        {latLng: [0, 20], name: 'Africa - 1 views'},   
+        {latLng: [35, 100], name: 'China -29 views'},    
+        {latLng: [46, 105], name: 'Mongolia - 2123 views'}, 
+        {latLng: [40, 70], name: 'Kyrgiztan - 24446 views'},    
         {latLng: [58, 50], name: 'Russia - 3405 views'},
         {latLng: [35, 135], name: 'Japan - 47566 views'}
     ]
   });
 });
+   

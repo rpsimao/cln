@@ -4,21 +4,21 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- *
+ * 
  * Copyright 2013, Codrops
- * http://www.codrops.com
+ * http://www.codrops.com 
  */
 var ModalEffects = (function() {
 
 	function init() {
 
 		var overlay = document.querySelector( '.md-overlay' );
-		console.log(overlay);
 
 		[].slice.call( document.querySelectorAll( ".btn-effect" ) ).forEach( function( el, i ) {
 
 			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
-					close = modal.querySelector( '.btn-modal' );
+				close = modal.querySelector( '.btn-modal' );
+				console.log(modal);
 
 			function removeModal( hasPerspective ) {
 				classie.remove( modal, 'md-show' );
@@ -29,15 +29,12 @@ var ModalEffects = (function() {
 			}
 
 			function removeModalHandler() {
-				removeModal( classie.has( el, 'md-setperspective' ) );
+				removeModal( classie.has( el, 'md-setperspective' ) ); 
 			}
 
 			el.addEventListener( 'click', function( ev ) {
 				classie.add( modal, 'md-show' );
-				if(overlay) {
-					console.log('aqui');
-					overlay.removeEventListener( 'click', removeModalHandler );
-				}
+				overlay.removeEventListener( 'click', removeModalHandler );
 				overlay.addEventListener( 'click', removeModalHandler );
 
 				if( classie.has( el, 'md-setperspective' ) ) {
