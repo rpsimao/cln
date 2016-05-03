@@ -1,24 +1,104 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2016-01-20 10:16+0000\n"
-"PO-Revision-Date: 2016-01-20 10:16+0000\n"
+"POT-Creation-Date: 2016-05-03 13:04+0100\n"
+"PO-Revision-Date: 2016-05-03 13:04+0100\n"
 "Last-Translator: Ricardo Simão <ricardo.simao@fterceiro.pt>\n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: _;setLabel;gettext\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: modules/clinic/controllers/IndexController.php:14
-#: modules/users/controllers/AdduserController.php:14
-#: modules/users/controllers/NewuserController.php:16
+#: modules/appointments/controllers/EditController.php:18
+#: modules/appointments/controllers/NewController.php:18
+#: modules/appointments/controllers/SearchController.php:20
+#: modules/clients/controllers/ClientsController.php:17
+#: modules/clients/controllers/DashboardController.php:18
+#: modules/clinic/controllers/IndexController.php:17
+#: modules/users/controllers/AdduserController.php:18
+#: modules/users/controllers/NewuserController.php:18
+#: modules/users/controllers/UserController.php:18
 msgid "You are not allowed to see this resource. Please login."
+msgstr ""
+
+#: modules/clients/controllers/ClientsController.php:50
+msgid "Client created successfully."
+msgstr ""
+
+#: modules/clients/controllers/ClientsController.php:94
+msgid "No Client found!"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:16
+msgid "First Name:"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:21
+msgid "Last Name:"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:26
+msgid "Age:"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:57
+msgid "Email:"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:63
+msgid "Origin:"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:66
+msgid "Swiss"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:67
+msgid "Portuguese"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:68
+msgid "Spanish"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:69
+msgid "German"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:70
+msgid "Italian"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:71
+msgid "English"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:72
+msgid "Maghrebian"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:73
+msgid "South American"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:74
+#: modules/appointments/views/scripts/edit/index.phtml:162
+#: modules/appointments/views/scripts/new/index.phtml:174
+msgid "Other"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:80
+msgid "Notes:"
+msgstr ""
+
+#: modules/clients/forms/Patients.php:85
+msgid "Create User"
 msgstr ""
 
 #: modules/default/forms/Login.php:14
@@ -33,99 +113,759 @@ msgstr "Password"
 msgid "Users_Form_Login_Submit"
 msgstr "Submit"
 
-#: modules/users/forms/Patients.php:16
-msgid "First Name:"
+#: modules/appointments/views/scripts/edit/index.phtml:10
+#: modules/clients/views/scripts/dashboard/index.phtml:47
+msgid "Appointment"
 msgstr ""
 
-#: modules/users/forms/Patients.php:21
-msgid "Last Name:"
+#: modules/appointments/views/scripts/edit/index.phtml:47
+#: modules/appointments/views/scripts/new/index.phtml:59
+msgid "What treatment will you do?"
 msgstr ""
 
-#: modules/users/forms/Patients.php:26
-msgid "Birthdate:"
+#: modules/appointments/views/scripts/edit/index.phtml:65
+#: modules/appointments/views/scripts/new/index.phtml:77
+msgid "Description of current treatment"
 msgstr ""
 
-#: modules/users/forms/Patients.php:32
-msgid "Address:"
+#: modules/appointments/views/scripts/edit/index.phtml:76
+#: modules/appointments/views/scripts/new/index.phtml:88
+msgid "Further treatment in the future?"
 msgstr ""
 
-#: modules/users/forms/Patients.php:37
-msgid "Postal-Code:"
+#: modules/appointments/views/scripts/edit/index.phtml:82
+#: modules/appointments/views/scripts/new/index.phtml:94
+msgid "Type of future treatment?"
 msgstr ""
 
-#: modules/users/forms/Patients.php:42
-msgid "City:"
+#: modules/appointments/views/scripts/edit/index.phtml:95
+#: modules/appointments/views/scripts/new/index.phtml:107
+msgid "Description of future treatment"
 msgstr ""
 
-#: modules/users/forms/Patients.php:47
-msgid "Phone:"
+#: modules/appointments/views/scripts/edit/index.phtml:107
+#: modules/appointments/views/scripts/new/index.phtml:119
+msgid "Patient's medical history"
 msgstr ""
 
-#: modules/users/forms/Patients.php:52
-msgid "Mobile:"
+#: modules/appointments/views/scripts/edit/index.phtml:119
+#: modules/appointments/views/scripts/new/index.phtml:131
+msgid "Type of skin"
 msgstr ""
 
-#: modules/users/forms/Patients.php:57
-msgid "Email:"
+#: modules/appointments/views/scripts/edit/index.phtml:124
+#: modules/appointments/views/scripts/edit/index.phtml:139
+#: modules/appointments/views/scripts/edit/index.phtml:154
+#: modules/appointments/views/scripts/new/index.phtml:136
+#: modules/appointments/views/scripts/new/index.phtml:151
+#: modules/appointments/views/scripts/new/index.phtml:166
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:1
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:1
+#: modules/appointments/views/scripts/partials/typeOfTreatment.phtml:1
+#: modules/appointments/views/scripts/partials/typeOfTreatmentPopulate.phtml:1
+msgid "Click to select"
 msgstr ""
 
-#: modules/users/forms/Patients.php:63
-msgid "Origin:"
+#: modules/appointments/views/scripts/edit/index.phtml:125
+#: modules/appointments/views/scripts/new/index.phtml:137
+msgid "Light"
 msgstr ""
 
-#: modules/users/forms/Patients.php:66
-msgid "Swiss"
+#: modules/appointments/views/scripts/edit/index.phtml:126
+#: modules/appointments/views/scripts/new/index.phtml:138
+msgid "Dark"
 msgstr ""
 
-#: modules/users/forms/Patients.php:67
-msgid "Portuguese"
+#: modules/appointments/views/scripts/edit/index.phtml:127
+#: modules/appointments/views/scripts/new/index.phtml:139
+msgid "Mate"
 msgstr ""
 
-#: modules/users/forms/Patients.php:68
-msgid "Spanish"
+#: modules/appointments/views/scripts/edit/index.phtml:128
+#: modules/appointments/views/scripts/edit/index.phtml:160
+#: modules/appointments/views/scripts/new/index.phtml:140
+#: modules/appointments/views/scripts/new/index.phtml:172
+msgid "Black"
 msgstr ""
 
-#: modules/users/forms/Patients.php:69
-msgid "German"
+#: modules/appointments/views/scripts/edit/index.phtml:134
+#: modules/appointments/views/scripts/edit/index.phtml:149
+#: modules/appointments/views/scripts/new/index.phtml:146
+#: modules/appointments/views/scripts/new/index.phtml:161
+msgid "Hair type "
 msgstr ""
 
-#: modules/users/forms/Patients.php:70
-msgid "Italian"
+#: modules/appointments/views/scripts/edit/index.phtml:141
+#: modules/appointments/views/scripts/new/index.phtml:153
+msgid "Thick"
 msgstr ""
 
-#: modules/users/forms/Patients.php:71
-msgid "English"
+#: modules/appointments/views/scripts/edit/index.phtml:142
+#: modules/appointments/views/scripts/new/index.phtml:154
+msgid "Thin"
 msgstr ""
 
-#: modules/users/forms/Patients.php:72
-msgid "Other"
+#: modules/appointments/views/scripts/edit/index.phtml:156
+#: modules/appointments/views/scripts/new/index.phtml:168
+msgid "Blond"
 msgstr ""
 
-#: modules/users/forms/Patients.php:78
-msgid "Notes:"
+#: modules/appointments/views/scripts/edit/index.phtml:157
+#: modules/appointments/views/scripts/new/index.phtml:169
+msgid "Brown"
 msgstr ""
 
-#: modules/users/forms/Patients.php:83
-msgid "Create User"
+#: modules/appointments/views/scripts/edit/index.phtml:158
+#: modules/appointments/views/scripts/new/index.phtml:170
+msgid "Chestnut"
 msgstr ""
 
-#: modules/clinic/views/scripts/index/index.phtml:9
-#: modules/users/views/scripts/adduser/index.phtml:9
-#: modules/users/views/scripts/newuser/index.phtml:7
-msgid "New Client"
+#: modules/appointments/views/scripts/edit/index.phtml:159
+#: modules/appointments/views/scripts/new/index.phtml:171
+msgid "Grey"
 msgstr ""
 
-#: modules/clinic/views/scripts/index/index.phtml:27
+#: modules/appointments/views/scripts/edit/index.phtml:161
+#: modules/appointments/views/scripts/new/index.phtml:173
+msgid "Red"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:173
+#: modules/appointments/views/scripts/new/index.phtml:185
+msgid "Allergies"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:183
+#: modules/appointments/views/scripts/new/index.phtml:195
+msgid ""
+"You are out in the sun or did you use self-tanning creams in the last 15 "
+"days?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:199
+#: modules/appointments/views/scripts/new/index.phtml:211
+msgid "Have you ever used laser or pulsed light?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:211
+#: modules/appointments/views/scripts/new/index.phtml:223
+msgid "Drug information"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:218
+#: modules/appointments/views/scripts/new/index.phtml:230
+msgid "Usually you take vitamins, antidepressants or anti-acne treatment?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:231
+#: modules/appointments/views/scripts/new/index.phtml:243
+msgid ""
+"Do you currently have hormone treatment for infertility, menopause, "
+"endometriosis or thyroid (oral or injectable)?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:244
+#: modules/appointments/views/scripts/new/index.phtml:256
+msgid "Do you follow a treatment for diabetes or cholesterol?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:255
+#: modules/appointments/views/scripts/new/index.phtml:267
+msgid "Questions concerning your health"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:262
+#: modules/appointments/views/scripts/new/index.phtml:274
+msgid ""
+"Does it is a possibility that you are currently pregnant? Or trying to "
+"conceive?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:276
+#: modules/appointments/views/scripts/new/index.phtml:288
+msgid ""
+"Have you ever had radiation treatments, chemotherapy due to a cancer disease?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:290
+#: modules/appointments/views/scripts/new/index.phtml:302
+msgid "Do you have sensitive and easily irritated skin?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:302
+#: modules/appointments/views/scripts/new/index.phtml:314
+msgid "Do you have any lesions on the selected treatment area, namely:"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:310
+#: modules/appointments/views/scripts/new/index.phtml:322
+msgid "inflammations, abscesses, burns?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:316
+#: modules/appointments/views/scripts/new/index.phtml:328
+msgid "skin tumors, pigmentation spots?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:322
+#: modules/appointments/views/scripts/new/index.phtml:334
+msgid "scars on the treatment area?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:328
+#: modules/appointments/views/scripts/new/index.phtml:340
+msgid ""
+"fragile areas of vascular (ease to hematoma \"blue\"), pruritus (itching, "
+"dryness)?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:334
+#: modules/appointments/views/scripts/new/index.phtml:346
+msgid "tattoos on the area?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:345
+#: modules/appointments/views/scripts/new/index.phtml:357
+msgid "Do you have circulatory problems, varicose veins and telangiectasia?"
+msgstr ""
+
+#: modules/appointments/views/scripts/edit/index.phtml:368
+#: modules/appointments/views/scripts/new/index.phtml:380
+msgid "Submit"
+msgstr ""
+
+#: modules/appointments/views/scripts/new/index.phtml:8
+msgid "For this Patient make a 24H TEST"
+msgstr ""
+
+#: modules/appointments/views/scripts/new/index.phtml:25
+#: modules/clients/views/scripts/dashboard/index.phtml:34
+#: modules/clinic/views/scripts/index/index.phtml:39
 msgid "New Appointment"
 msgstr ""
 
-#: modules/clinic/views/scripts/index/index.phtml:45
+#: modules/appointments/views/scripts/partials/modals.phtml:3
+#: modules/appointments/views/scripts/partials/modals.phtml:20
+#: modules/appointments/views/scripts/partials/modals.phtml:37
+#: modules/appointments/views/scripts/partials/modals.phtml:52
+#: modules/appointments/views/scripts/partials/modals.phtml:67
+#: modules/appointments/views/scripts/partials/modals.phtml:82
+#: modules/appointments/views/scripts/partials/modals.phtml:99
+#: modules/appointments/views/scripts/partials/modals.phtml:113
+#: modules/appointments/views/scripts/partials/modals.phtml:127
+#: modules/appointments/views/scripts/partials/modals.phtml:141
+#: modules/appointments/views/scripts/partials/modals.phtml:155
+#: modules/appointments/views/scripts/partials/modals.phtml:169
+#: modules/appointments/views/scripts/partials/modals.phtml:184
+#: modules/appointments/views/scripts/partials/modalsalerts.phtml:6
+msgid "Attention"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:7
+#: modules/appointments/views/scripts/partials/modals.phtml:24
+msgid ""
+"Make a TEST 24H to people who have more than 45 years and do 2 joules below "
+"the basic skin type!"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:10
+#: modules/appointments/views/scripts/partials/modals.phtml:27
+msgid ""
+"If the patient is of Latin origin (Italian, Portuguese, Spanish, Maghrebian, "
+"South American), make 2 joules below the basic skin type!"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:14
+#: modules/appointments/views/scripts/partials/modals.phtml:31
+#: modules/appointments/views/scripts/partials/modals.phtml:45
+#: modules/appointments/views/scripts/partials/modals.phtml:60
+#: modules/appointments/views/scripts/partials/modals.phtml:75
+#: modules/appointments/views/scripts/partials/modals.phtml:93
+#: modules/appointments/views/scripts/partials/modals.phtml:107
+#: modules/appointments/views/scripts/partials/modals.phtml:121
+#: modules/appointments/views/scripts/partials/modals.phtml:135
+#: modules/appointments/views/scripts/partials/modals.phtml:149
+#: modules/appointments/views/scripts/partials/modals.phtml:163
+#: modules/appointments/views/scripts/partials/modals.phtml:177
+#: modules/appointments/views/scripts/partials/modals.phtml:192
+msgid "Close"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:41
+msgid "If phototype is 4, make a 24H test, test of 6, 8, 10 joule!"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:56
+msgid "After an exposure to the sun, wait 30 days before begin the treatment"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:71
+msgid "If 'YES', wait one month before the next session!"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:86
+msgid "Treatment of acne (wait one year after treatment)"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:89
+msgid " If antidepressants, taken by medical prescription, make a 24-H test"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:103
+msgid "Do a 24H test if the patient use hormone therapy!"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:117
+msgid "Do a 24H test if the patient do one of these treatments!"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:131
+msgid ""
+"Don't do a treatment on pregnant woman! After breastfeeding wait two months!"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:145
+msgid "Seek the agreement of her doctor if it dates back less than 2 years!"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:159
+msgid "Do 2 joules below the basic skin type!"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:173
+msgid ""
+"Caution: If \"YES\" answer to any of the questions above, delimit the area "
+"at risk and treat 2 cm of this area!"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/modals.phtml:188
+msgid ""
+"Please note, if significant inflammatory or varices, delineate the area at "
+"risk and treat 2 cm of this area!"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:2
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:2
+msgid "Upper lip/Chin"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:2
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:2
+msgid "Upper lip/Chin | FACE"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:3
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:4
+msgid "Beard/Down Face"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:3
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:4
+msgid "Beard/Down Face | FACE"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:4
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:6
+msgid "Mustache"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:4
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:6
+msgid "Mustache | FACE"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:5
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:8
+msgid "Cheek"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:5
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:8
+msgid "Cheek | FACE"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:6
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:10
+msgid "Neck"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:6
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:10
+msgid "Neck | FACE"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:7
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:12
+msgid "Nose or ear"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:7
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:12
+msgid "Nose or ear | FACE"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:8
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:14
+msgid "Inter eyebrows"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:8
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:14
+msgid "Inter eyebrows | FACE"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:9
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:16
+msgid "Hand or fingers"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:9
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:16
+msgid "Hand or fingers  | ARM"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:10
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:18
+msgid "Shoulders"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:10
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:18
+msgid "Shoulders | ARM"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:11
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:20
+msgid "Forearm"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:11
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:20
+msgid "Forearm | ARM"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:12
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:22
+msgid "Whole arms"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:12
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:22
+msgid "Whole arms | ARM"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:13
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:24
+msgid "Armpits"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:13
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:24
+msgid "Armpits | ARM"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:14
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:26
+msgid "Torso"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:14
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:26
+msgid "Torso | DOS/CHEST"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:15
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:28
+msgid "Areola or nipple"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:15
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:28
+msgid "Areola or nipple | DOS/CHEST"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:16
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:30
+msgid "Breasts"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:16
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:30
+msgid "Breasts | DOS/CHEST"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:17
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:32
+msgid "Abdominal area"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:17
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:32
+msgid "Abdominal area | DOS/CHEST"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:18
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:34
+msgid "Belly"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:18
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:34
+msgid "Belly | DOS/CHEST"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:19
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:36
+msgid "Full Back"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:19
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:36
+msgid "Full Back | DOS/CHEST"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:20
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:38
+msgid "Upper body"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:20
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:38
+msgid "Upper body | DOS/CHEST"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:21
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:40
+msgid "Lower back"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:21
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:40
+msgid "Lower back | DOS/CHEST"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:22
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:42
+msgid "Thighs"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:22
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:42
+msgid "Thighs | THIGH/LEG/FOOT/PUBIS"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:23
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:44
+msgid "Overflow thighs"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:23
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:44
+msgid "Overflow thighs | THIGH/LEG/FOOT/PUBIS"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:24
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:46
+msgid "Rear thighs"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:24
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:46
+msgid "Rear thighs | THIGH/LEG/FOOT/PUBIS"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:25
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:48
+msgid "Pubis"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:25
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:48
+msgid "Pubis | THIGH/LEG/FOOT/PUBIS"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:26
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:50
+msgid "Pubis + lip"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:26
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:50
+msgid "Pubis + lip | THIGH/LEG/FOOT/PUBIS"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:27
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:52
+msgid "Legs"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:27
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:52
+msgid "Legs | THIGH/LEG/FOOT/PUBIS"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:28
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:54
+msgid "Half legs"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:28
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:54
+msgid "Half legs | THIGH/LEG/FOOT/PUBIS"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:29
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:56
+msgid "Kneeling only"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:29
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:56
+msgid "Kneeling only | THIGH/LEG/FOOT/PUBIS"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:30
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:58
+msgid "Inter gluteal furrow"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:30
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:58
+msgid "Inter gluteal furrow | THIGH/LEG/FOOT/PUBIS"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:31
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:60
+msgid "Feet"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:31
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:60
+msgid "Feet | THIGH/LEG/FOOT/PUBISt"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:32
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:62
+msgid "Buttocks"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/treatmentDescription.phtml:32
+#: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:62
+msgid "Buttocks | THIGH/LEG/FOOT/PUBIS"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/typeOfTreatment.phtml:2
+#: modules/appointments/views/scripts/partials/typeOfTreatmentPopulate.phtml:2
+msgid "FACE"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/typeOfTreatment.phtml:3
+#: modules/appointments/views/scripts/partials/typeOfTreatmentPopulate.phtml:3
+msgid "ARM"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/typeOfTreatment.phtml:4
+#: modules/appointments/views/scripts/partials/typeOfTreatmentPopulate.phtml:4
+msgid "DOS/CHEST"
+msgstr ""
+
+#: modules/appointments/views/scripts/partials/typeOfTreatment.phtml:5
+#: modules/appointments/views/scripts/partials/typeOfTreatmentPopulate.phtml:5
+msgid "THIGH/LEG/FOOT/PUBIS"
+msgstr ""
+
+#: modules/appointments/views/scripts/search/index.phtml:10
+#: modules/clients/views/scripts/dashboard/index.phtml:55
+msgid "Date"
+msgstr ""
+
+#: modules/appointments/views/scripts/search/index.phtml:11
+#: modules/clinic/views/scripts/index/index.phtml:57
+msgid "View Appointment"
+msgstr ""
+
+#: modules/appointments/views/scripts/search/index.phtml:21
+#: modules/clients/views/scripts/dashboard/index.phtml:56
+msgid "View"
+msgstr ""
+
+#: modules/appointments/views/scripts/search/index.phtml:34
+#: modules/clients/views/scripts/dashboard/index.phtml:71
+msgid "There are no appointments"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/index.phtml:7
+#: modules/clients/views/scripts/clients/new.phtml:9
+#: modules/clinic/views/scripts/index/index.phtml:20
+msgid "New Client"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/search.phtml:17
+msgid "Search for Client"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/search.phtml:29
+msgid "Search for:"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/search.phtml:32
+#: modules/clients/views/scripts/clients/searchfor.phtml:14
+msgid "Email"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/search.phtml:38
+msgid "Birthdate"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/search.phtml:43
+msgid "Mobile"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/search.phtml:48
+msgid "Phone"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/search.phtml:54
+msgid "First Name + Last Name"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/search.phtml:60
+msgid "Search"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/searchfor.phtml:10
+msgid "Nom"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/searchfor.phtml:18
+#: modules/clients/views/scripts/dashboard/index.phtml:15
+msgid "Age"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/searchfor.phtml:22
+msgid "Origin"
+msgstr ""
+
+#: modules/clients/views/scripts/clients/searchfor.phtml:27
+#: modules/clients/views/scripts/clients/searchfor.phtml:39
+msgid "Select"
+msgstr ""
+
+#: modules/clients/views/scripts/dashboard/index.phtml:14
+msgid "Name"
+msgstr ""
+
+#: modules/clinic/views/scripts/index/index.phtml:76
 msgid "Search Client"
 msgstr ""
 
-#: modules/clinic/views/scripts/index/index.phtml:63
-msgid "Search Appointment"
+#: modules/clinic/views/scripts/index/index.phtml:94
+msgid "Switch Client"
 msgstr ""
 
-#~ msgid "An error occurred in the combination of your username / password. Try Again."
-#~ msgstr "An error occurred in the combination of your username / password. Try Again."
+#~ msgid ""
+#~ "An error occurred in the combination of your username / password. Try "
+#~ "Again."
+#~ msgstr ""
+#~ "An error occurred in the combination of your username / password. Try "
+#~ "Again."

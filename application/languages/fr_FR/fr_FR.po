@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2016-02-24 18:40+0000\n"
-"PO-Revision-Date: 2016-02-24 18:40+0000\n"
+"POT-Creation-Date: 2016-05-03 13:01+0100\n"
+"PO-Revision-Date: 2016-05-03 13:03+0100\n"
 "Last-Translator: Ricardo Simão <ricardo.simao@fterceiro.pt>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -47,28 +47,8 @@ msgid "Last Name:"
 msgstr "Nom de famille:"
 
 #: modules/clients/forms/Patients.php:26
-msgid "Birthdate:"
-msgstr "Date de Naissance:"
-
-#: modules/clients/forms/Patients.php:32
-msgid "Address:"
-msgstr "Adresse"
-
-#: modules/clients/forms/Patients.php:37
-msgid "Postal-Code:"
-msgstr "Code postal"
-
-#: modules/clients/forms/Patients.php:42
-msgid "City:"
-msgstr "Ville"
-
-#: modules/clients/forms/Patients.php:47
-msgid "Phone:"
-msgstr "Téléphone fixe"
-
-#: modules/clients/forms/Patients.php:52
-msgid "Mobile:"
-msgstr "Portable"
+msgid "Age:"
+msgstr "Âge:"
 
 #: modules/clients/forms/Patients.php:57
 msgid "Email:"
@@ -103,16 +83,24 @@ msgid "English"
 msgstr "Anglaise"
 
 #: modules/clients/forms/Patients.php:72
-#: modules/appointments/views/scripts/edit/index.phtml:161
-#: modules/appointments/views/scripts/new/index.phtml:161
+msgid "Maghrebian"
+msgstr "Maghrébin"
+
+#: modules/clients/forms/Patients.php:73
+msgid "South American"
+msgstr "Sud américain"
+
+#: modules/clients/forms/Patients.php:74
+#: modules/appointments/views/scripts/edit/index.phtml:162
+#: modules/appointments/views/scripts/new/index.phtml:174
 msgid "Other"
 msgstr "Auto"
 
-#: modules/clients/forms/Patients.php:78
+#: modules/clients/forms/Patients.php:80
 msgid "Notes:"
 msgstr "Notes:"
 
-#: modules/clients/forms/Patients.php:83
+#: modules/clients/forms/Patients.php:85
 msgid "Create User"
 msgstr "Créer un client"
 
@@ -129,51 +117,51 @@ msgid "Users_Form_Login_Submit"
 msgstr "Se connecter"
 
 #: modules/appointments/views/scripts/edit/index.phtml:10
-#: modules/appointments/views/scripts/new/index.phtml:10
+#: modules/clients/views/scripts/dashboard/index.phtml:47
 msgid "Appointment"
 msgstr "Nouvelle Consulte"
 
-#: modules/appointments/views/scripts/edit/index.phtml:46
-#: modules/appointments/views/scripts/new/index.phtml:46
+#: modules/appointments/views/scripts/edit/index.phtml:47
+#: modules/appointments/views/scripts/new/index.phtml:59
 msgid "What treatment will you do?"
 msgstr "Quel traitement allez vous faire?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:64
-#: modules/appointments/views/scripts/new/index.phtml:64
+#: modules/appointments/views/scripts/edit/index.phtml:65
+#: modules/appointments/views/scripts/new/index.phtml:77
 msgid "Description of current treatment"
 msgstr "Description du traitement actuel"
 
-#: modules/appointments/views/scripts/edit/index.phtml:75
-#: modules/appointments/views/scripts/new/index.phtml:75
+#: modules/appointments/views/scripts/edit/index.phtml:76
+#: modules/appointments/views/scripts/new/index.phtml:88
 msgid "Further treatment in the future?"
 msgstr "Quel autre traitement souhaiteriez vous faire dans le futur?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:81
-#: modules/appointments/views/scripts/new/index.phtml:81
+#: modules/appointments/views/scripts/edit/index.phtml:82
+#: modules/appointments/views/scripts/new/index.phtml:94
 msgid "Type of future treatment?"
 msgstr "Type de traitement futur"
 
-#: modules/appointments/views/scripts/edit/index.phtml:94
-#: modules/appointments/views/scripts/new/index.phtml:94
+#: modules/appointments/views/scripts/edit/index.phtml:95
+#: modules/appointments/views/scripts/new/index.phtml:107
 msgid "Description of future treatment"
 msgstr "Description du traitement futur"
 
-#: modules/appointments/views/scripts/edit/index.phtml:106
-#: modules/appointments/views/scripts/new/index.phtml:106
+#: modules/appointments/views/scripts/edit/index.phtml:107
+#: modules/appointments/views/scripts/new/index.phtml:119
 msgid "Patient's medical history"
 msgstr "Historique médicale du patient"
 
-#: modules/appointments/views/scripts/edit/index.phtml:118
-#: modules/appointments/views/scripts/new/index.phtml:118
+#: modules/appointments/views/scripts/edit/index.phtml:119
+#: modules/appointments/views/scripts/new/index.phtml:131
 msgid "Type of skin"
 msgstr "Type de peau"
 
-#: modules/appointments/views/scripts/edit/index.phtml:123
-#: modules/appointments/views/scripts/edit/index.phtml:138
-#: modules/appointments/views/scripts/edit/index.phtml:153
-#: modules/appointments/views/scripts/new/index.phtml:123
-#: modules/appointments/views/scripts/new/index.phtml:138
-#: modules/appointments/views/scripts/new/index.phtml:153
+#: modules/appointments/views/scripts/edit/index.phtml:124
+#: modules/appointments/views/scripts/edit/index.phtml:139
+#: modules/appointments/views/scripts/edit/index.phtml:154
+#: modules/appointments/views/scripts/new/index.phtml:136
+#: modules/appointments/views/scripts/new/index.phtml:151
+#: modules/appointments/views/scripts/new/index.phtml:166
 #: modules/appointments/views/scripts/partials/treatmentDescription.phtml:1
 #: modules/appointments/views/scripts/partials/treatmentDescriptionPopulate.phtml:1
 #: modules/appointments/views/scripts/partials/typeOfTreatment.phtml:1
@@ -181,77 +169,77 @@ msgstr "Type de peau"
 msgid "Click to select"
 msgstr "Cliquez pour sélectionner"
 
-#: modules/appointments/views/scripts/edit/index.phtml:124
-#: modules/appointments/views/scripts/new/index.phtml:124
+#: modules/appointments/views/scripts/edit/index.phtml:125
+#: modules/appointments/views/scripts/new/index.phtml:137
 msgid "Light"
 msgstr "Claire"
 
-#: modules/appointments/views/scripts/edit/index.phtml:125
-#: modules/appointments/views/scripts/new/index.phtml:125
+#: modules/appointments/views/scripts/edit/index.phtml:126
+#: modules/appointments/views/scripts/new/index.phtml:138
 msgid "Dark"
 msgstr "Foncée"
 
-#: modules/appointments/views/scripts/edit/index.phtml:126
-#: modules/appointments/views/scripts/new/index.phtml:126
+#: modules/appointments/views/scripts/edit/index.phtml:127
+#: modules/appointments/views/scripts/new/index.phtml:139
 msgid "Mate"
 msgstr "Mate"
 
-#: modules/appointments/views/scripts/edit/index.phtml:127
-#: modules/appointments/views/scripts/edit/index.phtml:159
-#: modules/appointments/views/scripts/new/index.phtml:127
-#: modules/appointments/views/scripts/new/index.phtml:159
+#: modules/appointments/views/scripts/edit/index.phtml:128
+#: modules/appointments/views/scripts/edit/index.phtml:160
+#: modules/appointments/views/scripts/new/index.phtml:140
+#: modules/appointments/views/scripts/new/index.phtml:172
 msgid "Black"
 msgstr "Noir"
 
-#: modules/appointments/views/scripts/edit/index.phtml:133
-#: modules/appointments/views/scripts/edit/index.phtml:148
-#: modules/appointments/views/scripts/new/index.phtml:133
-#: modules/appointments/views/scripts/new/index.phtml:148
+#: modules/appointments/views/scripts/edit/index.phtml:134
+#: modules/appointments/views/scripts/edit/index.phtml:149
+#: modules/appointments/views/scripts/new/index.phtml:146
+#: modules/appointments/views/scripts/new/index.phtml:161
 msgid "Hair type "
 msgstr "Type de poil"
 
-#: modules/appointments/views/scripts/edit/index.phtml:140
-#: modules/appointments/views/scripts/new/index.phtml:140
+#: modules/appointments/views/scripts/edit/index.phtml:141
+#: modules/appointments/views/scripts/new/index.phtml:153
 msgid "Thick"
 msgstr "Epais"
 
-#: modules/appointments/views/scripts/edit/index.phtml:141
-#: modules/appointments/views/scripts/new/index.phtml:141
+#: modules/appointments/views/scripts/edit/index.phtml:142
+#: modules/appointments/views/scripts/new/index.phtml:154
 msgid "Thin"
 msgstr "Fin"
 
-#: modules/appointments/views/scripts/edit/index.phtml:155
-#: modules/appointments/views/scripts/new/index.phtml:155
+#: modules/appointments/views/scripts/edit/index.phtml:156
+#: modules/appointments/views/scripts/new/index.phtml:168
 msgid "Blond"
 msgstr "Blond"
 
-#: modules/appointments/views/scripts/edit/index.phtml:156
-#: modules/appointments/views/scripts/new/index.phtml:156
+#: modules/appointments/views/scripts/edit/index.phtml:157
+#: modules/appointments/views/scripts/new/index.phtml:169
 msgid "Brown"
 msgstr "Brun"
 
-#: modules/appointments/views/scripts/edit/index.phtml:157
-#: modules/appointments/views/scripts/new/index.phtml:157
+#: modules/appointments/views/scripts/edit/index.phtml:158
+#: modules/appointments/views/scripts/new/index.phtml:170
 msgid "Chestnut"
 msgstr "Châtain "
 
-#: modules/appointments/views/scripts/edit/index.phtml:158
-#: modules/appointments/views/scripts/new/index.phtml:158
+#: modules/appointments/views/scripts/edit/index.phtml:159
+#: modules/appointments/views/scripts/new/index.phtml:171
 msgid "Grey"
 msgstr "Gris"
 
-#: modules/appointments/views/scripts/edit/index.phtml:160
-#: modules/appointments/views/scripts/new/index.phtml:160
+#: modules/appointments/views/scripts/edit/index.phtml:161
+#: modules/appointments/views/scripts/new/index.phtml:173
 msgid "Red"
 msgstr "Roux"
 
-#: modules/appointments/views/scripts/edit/index.phtml:172
-#: modules/appointments/views/scripts/new/index.phtml:172
+#: modules/appointments/views/scripts/edit/index.phtml:173
+#: modules/appointments/views/scripts/new/index.phtml:185
 msgid "Allergies"
 msgstr "Allergies"
 
-#: modules/appointments/views/scripts/edit/index.phtml:182
-#: modules/appointments/views/scripts/new/index.phtml:182
+#: modules/appointments/views/scripts/edit/index.phtml:183
+#: modules/appointments/views/scripts/new/index.phtml:195
 msgid ""
 "You are out in the sun or did you use self-tanning creams in the last 15 "
 "days?"
@@ -259,25 +247,25 @@ msgstr ""
 "Vous êtes vous exposé au soleil ou avez-vous utilisé des crèmes auto-"
 "bronzantes dans les 15 derniers jours?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:198
-#: modules/appointments/views/scripts/new/index.phtml:198
+#: modules/appointments/views/scripts/edit/index.phtml:199
+#: modules/appointments/views/scripts/new/index.phtml:211
 msgid "Have you ever used laser or pulsed light?"
 msgstr "Avez-vous déjà eu des soins au laser ou de la lumière pulsée?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:210
-#: modules/appointments/views/scripts/new/index.phtml:210
+#: modules/appointments/views/scripts/edit/index.phtml:211
+#: modules/appointments/views/scripts/new/index.phtml:223
 msgid "Drug information"
 msgstr "Informations médicamenteuses"
 
-#: modules/appointments/views/scripts/edit/index.phtml:217
-#: modules/appointments/views/scripts/new/index.phtml:217
+#: modules/appointments/views/scripts/edit/index.phtml:218
+#: modules/appointments/views/scripts/new/index.phtml:230
 msgid "Usually you take vitamins, antidepressants or anti-acne treatment?"
 msgstr ""
 "Habituellement prenez-vous des vitamines, antidépresseur ou un traitement "
 "anti -acnéique?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:230
-#: modules/appointments/views/scripts/new/index.phtml:230
+#: modules/appointments/views/scripts/edit/index.phtml:231
+#: modules/appointments/views/scripts/new/index.phtml:243
 msgid ""
 "Do you currently have hormone treatment for infertility, menopause, "
 "endometriosis or thyroid (oral or injectable)?"
@@ -285,18 +273,18 @@ msgstr ""
 "Avez-vous actuellement un traitement hormonal pour l'infertilité, la "
 "ménopause, l'endométriose ou pour la thyroide (ceci par oral ou injectable)?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:243
-#: modules/appointments/views/scripts/new/index.phtml:243
+#: modules/appointments/views/scripts/edit/index.phtml:244
+#: modules/appointments/views/scripts/new/index.phtml:256
 msgid "Do you follow a treatment for diabetes or cholesterol?"
 msgstr "Suivez-vous un traitement pour le diabète ou le cholestérol?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:254
-#: modules/appointments/views/scripts/new/index.phtml:254
+#: modules/appointments/views/scripts/edit/index.phtml:255
+#: modules/appointments/views/scripts/new/index.phtml:267
 msgid "Questions concerning your health"
 msgstr "Questions concernant votre santé"
 
-#: modules/appointments/views/scripts/edit/index.phtml:261
-#: modules/appointments/views/scripts/new/index.phtml:261
+#: modules/appointments/views/scripts/edit/index.phtml:262
+#: modules/appointments/views/scripts/new/index.phtml:274
 msgid ""
 "Does it is a possibility that you are currently pregnant? Or trying to "
 "conceive?"
@@ -304,41 +292,41 @@ msgstr ""
 "Ya-t -il une possibilité que vous soyez actuellement enceinte? Ou que vous "
 "essayez de concevoir?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:275
-#: modules/appointments/views/scripts/new/index.phtml:275
+#: modules/appointments/views/scripts/edit/index.phtml:276
+#: modules/appointments/views/scripts/new/index.phtml:288
 msgid ""
 "Have you ever had radiation treatments, chemotherapy due to a cancer disease?"
 msgstr ""
 "Avez-vous déjà eu des soins de radiothérapie, chimiothérapie à cause d'une "
 "maladie cancéreuse?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:289
-#: modules/appointments/views/scripts/new/index.phtml:289
+#: modules/appointments/views/scripts/edit/index.phtml:290
+#: modules/appointments/views/scripts/new/index.phtml:302
 msgid "Do you have sensitive and easily irritated skin?"
 msgstr "Avez-vous la peau sensible et facilement irritable?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:301
-#: modules/appointments/views/scripts/new/index.phtml:301
+#: modules/appointments/views/scripts/edit/index.phtml:302
+#: modules/appointments/views/scripts/new/index.phtml:314
 msgid "Do you have any lesions on the selected treatment area, namely:"
 msgstr "Avez-vous des lésions sur la zone de traitement choisie, à savoir:"
 
-#: modules/appointments/views/scripts/edit/index.phtml:309
-#: modules/appointments/views/scripts/new/index.phtml:309
+#: modules/appointments/views/scripts/edit/index.phtml:310
+#: modules/appointments/views/scripts/new/index.phtml:322
 msgid "inflammations, abscesses, burns?"
 msgstr "Inflammations, abcès, brûlures"
 
-#: modules/appointments/views/scripts/edit/index.phtml:315
-#: modules/appointments/views/scripts/new/index.phtml:315
+#: modules/appointments/views/scripts/edit/index.phtml:316
+#: modules/appointments/views/scripts/new/index.phtml:328
 msgid "skin tumors, pigmentation spots?"
 msgstr "tumeurs cutanées, taches de pigmentation?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:321
-#: modules/appointments/views/scripts/new/index.phtml:321
+#: modules/appointments/views/scripts/edit/index.phtml:322
+#: modules/appointments/views/scripts/new/index.phtml:334
 msgid "scars on the treatment area?"
 msgstr "cicatrices sur la zone à traiter?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:327
-#: modules/appointments/views/scripts/new/index.phtml:327
+#: modules/appointments/views/scripts/edit/index.phtml:328
+#: modules/appointments/views/scripts/new/index.phtml:340
 msgid ""
 "fragile areas of vascular (ease to hematoma \"blue\"), pruritus (itching, "
 "dryness)?"
@@ -346,37 +334,50 @@ msgstr ""
 "des zones de fragilité, de type vasculaire (facilité pour les hématomes "
 "\"bleus\"), prurit (démangeaisons, sécheresse)?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:333
-#: modules/appointments/views/scripts/new/index.phtml:333
+#: modules/appointments/views/scripts/edit/index.phtml:334
+#: modules/appointments/views/scripts/new/index.phtml:346
 msgid "tattoos on the area?"
 msgstr "tatouages sur la zone?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:344
-#: modules/appointments/views/scripts/new/index.phtml:344
+#: modules/appointments/views/scripts/edit/index.phtml:345
+#: modules/appointments/views/scripts/new/index.phtml:357
 msgid "Do you have circulatory problems, varicose veins and telangiectasia?"
 msgstr "Avez-vous des problèmes circulatoires, varices ou telangiectasies?"
 
-#: modules/appointments/views/scripts/edit/index.phtml:367
-#: modules/appointments/views/scripts/new/index.phtml:367
+#: modules/appointments/views/scripts/edit/index.phtml:368
+#: modules/appointments/views/scripts/new/index.phtml:380
 msgid "Submit"
 msgstr "Soumettre"
 
+#: modules/appointments/views/scripts/new/index.phtml:8
+msgid "For this Patient make a 24H TEST"
+msgstr "Pour ce faire un patient 24H ESSAI"
+
+#: modules/appointments/views/scripts/new/index.phtml:25
+#: modules/clients/views/scripts/dashboard/index.phtml:34
+#: modules/clinic/views/scripts/index/index.phtml:39
+msgid "New Appointment"
+msgstr "Nouvelle Consulte"
+
 #: modules/appointments/views/scripts/partials/modals.phtml:3
-#: modules/appointments/views/scripts/partials/modals.phtml:22
+#: modules/appointments/views/scripts/partials/modals.phtml:20
 #: modules/appointments/views/scripts/partials/modals.phtml:37
 #: modules/appointments/views/scripts/partials/modals.phtml:52
 #: modules/appointments/views/scripts/partials/modals.phtml:67
-#: modules/appointments/views/scripts/partials/modals.phtml:84
-#: modules/appointments/views/scripts/partials/modals.phtml:98
-#: modules/appointments/views/scripts/partials/modals.phtml:112
-#: modules/appointments/views/scripts/partials/modals.phtml:126
-#: modules/appointments/views/scripts/partials/modals.phtml:140
-#: modules/appointments/views/scripts/partials/modals.phtml:154
+#: modules/appointments/views/scripts/partials/modals.phtml:82
+#: modules/appointments/views/scripts/partials/modals.phtml:99
+#: modules/appointments/views/scripts/partials/modals.phtml:113
+#: modules/appointments/views/scripts/partials/modals.phtml:127
+#: modules/appointments/views/scripts/partials/modals.phtml:141
+#: modules/appointments/views/scripts/partials/modals.phtml:155
 #: modules/appointments/views/scripts/partials/modals.phtml:169
+#: modules/appointments/views/scripts/partials/modals.phtml:184
+#: modules/appointments/views/scripts/partials/modalsalerts.phtml:6
 msgid "Attention"
 msgstr "Attention"
 
 #: modules/appointments/views/scripts/partials/modals.phtml:7
+#: modules/appointments/views/scripts/partials/modals.phtml:24
 msgid ""
 "Make a TEST 24H to people who have more than 45 years and do 2 joules below "
 "the basic skin type!"
@@ -385,6 +386,7 @@ msgstr ""
 "joules en dessous du phototype de base!"
 
 #: modules/appointments/views/scripts/partials/modals.phtml:10
+#: modules/appointments/views/scripts/partials/modals.phtml:27
 msgid ""
 "If the patient is of Latin origin (Italian, Portuguese, Spanish, Maghrebian, "
 "South American), make 2 joules below the basic skin type!"
@@ -393,76 +395,77 @@ msgstr ""
 "magrebine, sud-americaine), faire 2 joules en dessous du phototype de base!"
 
 #: modules/appointments/views/scripts/partials/modals.phtml:14
-#: modules/appointments/views/scripts/partials/modals.phtml:30
+#: modules/appointments/views/scripts/partials/modals.phtml:31
 #: modules/appointments/views/scripts/partials/modals.phtml:45
 #: modules/appointments/views/scripts/partials/modals.phtml:60
-#: modules/appointments/views/scripts/partials/modals.phtml:78
-#: modules/appointments/views/scripts/partials/modals.phtml:92
-#: modules/appointments/views/scripts/partials/modals.phtml:106
-#: modules/appointments/views/scripts/partials/modals.phtml:120
-#: modules/appointments/views/scripts/partials/modals.phtml:134
-#: modules/appointments/views/scripts/partials/modals.phtml:148
-#: modules/appointments/views/scripts/partials/modals.phtml:162
+#: modules/appointments/views/scripts/partials/modals.phtml:75
+#: modules/appointments/views/scripts/partials/modals.phtml:93
+#: modules/appointments/views/scripts/partials/modals.phtml:107
+#: modules/appointments/views/scripts/partials/modals.phtml:121
+#: modules/appointments/views/scripts/partials/modals.phtml:135
+#: modules/appointments/views/scripts/partials/modals.phtml:149
+#: modules/appointments/views/scripts/partials/modals.phtml:163
 #: modules/appointments/views/scripts/partials/modals.phtml:177
+#: modules/appointments/views/scripts/partials/modals.phtml:192
 msgid "Close"
 msgstr "Fermer"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:26
+#: modules/appointments/views/scripts/partials/modals.phtml:41
 msgid "If phototype is 4, make a 24H test, test of 6, 8, 10 joule!"
 msgstr ""
 "En cas de phototype 4, faire un test de 24 H, test de 6, 8, 10 joule!\rType "
 "de"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:41
+#: modules/appointments/views/scripts/partials/modals.phtml:56
 msgid "After an exposure to the sun, wait 30 days before begin the treatment"
 msgstr ""
 "Attention: après UNEE XPOSITIOANU SOLEILA TTENDR3E0 JOURSA VANTD EC "
 "OMMENCERLE T RAITEMENT"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:56
+#: modules/appointments/views/scripts/partials/modals.phtml:71
 msgid "If 'YES', wait one month before the next session!"
 msgstr "Attention: si \"oui\", attendre 1 mois avant la prochaine séance!"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:71
+#: modules/appointments/views/scripts/partials/modals.phtml:86
 msgid "Treatment of acne (wait one year after treatment)"
 msgstr "Traitement d'acnée ( attendre une année après le traitement)"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:74
+#: modules/appointments/views/scripts/partials/modals.phtml:89
 msgid " If antidepressants, taken by medical prescription, make a 24-H test"
 msgstr ""
 "En cas d'anti dépresseur, prise de fer par prescription médicale, faire un t "
 "est de 24 H"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:88
+#: modules/appointments/views/scripts/partials/modals.phtml:103
 msgid "Do a 24H test if the patient use hormone therapy!"
 msgstr ""
 "Attention: faire un t est de 24 H si le patient souscrit à un t aitement "
 "hormonal!"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:102
+#: modules/appointments/views/scripts/partials/modals.phtml:117
 msgid "Do a 24H test if the patient do one of these treatments!"
 msgstr ""
 "Att ention: faire un t est de 24 H si le patient souscrit un de ces t "
 "raitemen t s!"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:116
+#: modules/appointments/views/scripts/partials/modals.phtml:131
 msgid ""
 "Don't do a treatment on pregnant woman! After breastfeeding wait two months!"
 msgstr ""
 "Att ention: ne pas faire un t raitemen t sur femme ence inte! Après "
 "l'allaitemen t attendre 2 mois!"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:130
+#: modules/appointments/views/scripts/partials/modals.phtml:145
 msgid "Seek the agreement of her doctor if it dates back less than 2 years!"
 msgstr ""
 "Att ention: demander l'accord de son médec in t raint ant si ça remonte à "
 "moins de 2 ans!"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:144
+#: modules/appointments/views/scripts/partials/modals.phtml:159
 msgid "Do 2 joules below the basic skin type!"
 msgstr "Att ention: faire 2joules en dessous du phototype de base!"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:158
+#: modules/appointments/views/scripts/partials/modals.phtml:173
 msgid ""
 "Caution: If \"YES\" answer to any of the questions above, delimit the area "
 "at risk and treat 2 cm of this area!"
@@ -470,7 +473,7 @@ msgstr ""
 "Att ention: en cas de réponse \"oui\" à une des questions ci-dessus , "
 "délimiter la zone à risque et t raiter à 2 cm de cett e zone!"
 
-#: modules/appointments/views/scripts/partials/modals.phtml:173
+#: modules/appointments/views/scripts/partials/modals.phtml:188
 msgid ""
 "Please note, if significant inflammatory or varices, delineate the area at "
 "risk and treat 2 cm of this area!"
@@ -809,21 +812,22 @@ msgid "THIGH/LEG/FOOT/PUBIS"
 msgstr "CUISSES/JAMBES/PIEDS/PUBIS"
 
 #: modules/appointments/views/scripts/search/index.phtml:10
-#: modules/clients/views/scripts/dashboard/index.phtml:50
+#: modules/clients/views/scripts/dashboard/index.phtml:55
 msgid "Date"
 msgstr "Date"
 
 #: modules/appointments/views/scripts/search/index.phtml:11
+#: modules/clinic/views/scripts/index/index.phtml:57
 msgid "View Appointment"
 msgstr "Vue Consulte"
 
 #: modules/appointments/views/scripts/search/index.phtml:21
-#: modules/clients/views/scripts/dashboard/index.phtml:51
+#: modules/clients/views/scripts/dashboard/index.phtml:56
 msgid "View"
 msgstr "Vue"
 
 #: modules/appointments/views/scripts/search/index.phtml:34
-#: modules/clients/views/scripts/dashboard/index.phtml:66
+#: modules/clients/views/scripts/dashboard/index.phtml:71
 msgid "There are no appointments"
 msgstr "Il n'y a pas de consulte"
 
@@ -846,27 +850,23 @@ msgstr "Rechercher:"
 msgid "Email"
 msgstr "E-mail"
 
-#: modules/clients/views/scripts/clients/search.phtml:37
-#: modules/clients/views/scripts/clients/searchfor.phtml:26
-#: modules/clients/views/scripts/dashboard/index.phtml:13
+#: modules/clients/views/scripts/clients/search.phtml:38
 msgid "Birthdate"
 msgstr "Date de Naissance"
 
-#: modules/clients/views/scripts/clients/search.phtml:42
-#: modules/clients/views/scripts/clients/searchfor.phtml:18
+#: modules/clients/views/scripts/clients/search.phtml:43
 msgid "Mobile"
 msgstr "Portable"
 
-#: modules/clients/views/scripts/clients/search.phtml:47
-#: modules/clients/views/scripts/clients/searchfor.phtml:22
+#: modules/clients/views/scripts/clients/search.phtml:48
 msgid "Phone"
 msgstr "Telephone fixe"
 
-#: modules/clients/views/scripts/clients/search.phtml:52
+#: modules/clients/views/scripts/clients/search.phtml:54
 msgid "First Name + Last Name"
 msgstr "Prénom + Nom de Famille:"
 
-#: modules/clients/views/scripts/clients/search.phtml:58
+#: modules/clients/views/scripts/clients/search.phtml:60
 msgid "Search"
 msgstr "Rechercher"
 
@@ -874,40 +874,58 @@ msgstr "Rechercher"
 msgid "Nom"
 msgstr "Nom"
 
-#: modules/clients/views/scripts/clients/searchfor.phtml:30
-#: modules/clients/views/scripts/clients/searchfor.phtml:43
+#: modules/clients/views/scripts/clients/searchfor.phtml:18
+#: modules/clients/views/scripts/dashboard/index.phtml:15
+msgid "Age"
+msgstr "Âge"
+
+#: modules/clients/views/scripts/clients/searchfor.phtml:22
+msgid "Origin"
+msgstr "Origine:"
+
+#: modules/clients/views/scripts/clients/searchfor.phtml:27
+#: modules/clients/views/scripts/clients/searchfor.phtml:39
 msgid "Select"
 msgstr "Sélectionner"
 
-#: modules/clients/views/scripts/dashboard/index.phtml:6
-msgid "Edit Client"
-msgstr "Editer Client"
-
-#: modules/clients/views/scripts/dashboard/index.phtml:10
+#: modules/clients/views/scripts/dashboard/index.phtml:14
 msgid "Name"
 msgstr "Nom"
 
-#: modules/clients/views/scripts/dashboard/index.phtml:21
-#: modules/clinic/views/scripts/index/index.phtml:38
-msgid "New Appointment"
-msgstr "Nouvelle Consulte"
-
-#: modules/clients/views/scripts/dashboard/index.phtml:28
-#: modules/clinic/views/scripts/index/index.phtml:74
-msgid "Search Appointment"
-msgstr "Voir Consulte"
-
-#: modules/clients/views/scripts/dashboard/index.phtml:38
-msgid "Last 5 Appointments"
-msgstr "5 dernières consultations"
-
-#: modules/clinic/views/scripts/index/index.phtml:56
+#: modules/clinic/views/scripts/index/index.phtml:76
 msgid "Search Client"
 msgstr "Fiche Cliente"
 
-#: modules/clinic/views/scripts/index/index.phtml:93
+#: modules/clinic/views/scripts/index/index.phtml:94
 msgid "Switch Client"
 msgstr "Passer Client"
+
+#~ msgid "Birthdate:"
+#~ msgstr "Date de Naissance:"
+
+#~ msgid "Address:"
+#~ msgstr "Adresse"
+
+#~ msgid "Postal-Code:"
+#~ msgstr "Code postal"
+
+#~ msgid "City:"
+#~ msgstr "Ville"
+
+#~ msgid "Phone:"
+#~ msgstr "Téléphone fixe"
+
+#~ msgid "Mobile:"
+#~ msgstr "Portable"
+
+#~ msgid "Edit Client"
+#~ msgstr "Editer Client"
+
+#~ msgid "Search Appointment"
+#~ msgstr "Voir Consulte"
+
+#~ msgid "Last 5 Appointments"
+#~ msgstr "5 dernières consultations"
 
 #~ msgid "Input text"
 #~ msgstr "Texte de saisie"
