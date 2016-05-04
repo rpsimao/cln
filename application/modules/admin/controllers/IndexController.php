@@ -47,12 +47,35 @@ class Admin_IndexController extends Zend_Controller_Action
        $this->_helper->layout->disableLayout();
 
 
-        $params = $this->getAllParams();
+       $params = $this->getAllParams();
+
+        $dbArray = array(
+
+            'username' => $params["username"],
+            'password' => $params["passwd"],
+            'roles' => $params["roles"],
+            'clinic' => $params["clinic"]
+
+        );
 
 
+        $db = new Users_Model_Users();
+        $resp = $db->insertNewUser($dbArray);
+
+        $this->getResponse()->appendBody($resp);
         
-        
-        
+    }
+
+    public function removeAction()
+    {
+        $this->_helper->viewRenderer->setNoRender(true);
+        $this->_helper->layout->disableLayout();
+
+        $param = $this->_getParam("id");
+
+        $db = new Users_Model_Users();
+        $db->removeUser($param);
+
     }
 
 

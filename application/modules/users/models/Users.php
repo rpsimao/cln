@@ -26,12 +26,17 @@ class Users_Model_Users
 
     public function insertNewUser(array $values)
     {
-        
-
         $this->table->insert($values);
         return $this->table->getAdapter()->lastInsertId();
+    }
 
-
+    
+    
+    public function removeUser($id)
+    {
+        $where = $this->table->getAdapter()->quoteInto('id = ?', (int) $id);
+        $this->table->delete($where);
+        
     }
 
 

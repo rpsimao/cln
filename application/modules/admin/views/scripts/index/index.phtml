@@ -38,19 +38,21 @@
 						<table class="table table-bordered table-responsive table-hover table-advance table-striped" id="admin-table-users">
 							<thead>
 								<tr>
-									<th>
+									<th><i class="fa fa-user"></i>
 										<?=$this->translate(gettext("Username"));?>
 									</th>
-									<th>
+									<th><i class="fa fa-lock"></i>
 										<?=$this->translate(gettext("Password"));?>
 									</th>
-									<th>
+									<th><i class="fa fa-tag"></i>
 										<?=$this->translate(gettext("Role"));?>
 									</th>
-									<th>
+									<th><i class="fa fa-building"></i>
 										<?=$this->translate(gettext("Clinic"));?>
 									</th>
-									<th><?=$this->translate(gettext("Edit"));?></th>
+									<th><i class="fa fa-trash"></i>
+										<?=$this->translate(gettext("Trash"));?>
+									</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -61,8 +63,7 @@
 										<td id="roles-<?=$user['id'] ?>"><?=$user["roles"]?></td>
 										<td id="clinic-<?=$user['id'] ?>"><?=$user["clinic"]?></td>
 										<td>
-											<button class="btn btn-green" id="edit-<?=$user['id'] ?>"><i class="fa fa-edit"></i></button>
-											<button class="btn btn-danger" id="trash-<?=$user['id'] ?>"><i class="fa fa-trash"></i></button>
+											<button class="btn btn-danger" id="trash-<?=$user['id'] ?>" onclick="removeUser(<?=$user['id']?>)"><i class="fa fa-trash"></i></button>
 										</td>
 									</tr>
 								<?php endforeach;?>
