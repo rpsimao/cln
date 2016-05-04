@@ -45,6 +45,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                ->addResourceType('dbtable', 'models/DbTable', 'Model_DbTable');
 
 
+        $loader = new Zend_Loader_Autoloader_Resource(array('basePath'  => APPLICATION_PATH .'/modules/admin', 'namespace' => 'Admin'));
+        $loader->addResourceType('form', 'forms', 'Form')
+               ->addResourceType('model', 'models', 'Model')
+               ->addResourceType('dbtable', 'models/DbTable', 'Model_DbTable');
+
+
     }
 
 

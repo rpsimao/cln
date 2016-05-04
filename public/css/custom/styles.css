@@ -181,3 +181,11 @@
     -webkit-transform: scale(1.5);
     margin-right: 6px;
 }
+
+.md-hide {
+    visibility: hidden;
+}
+
+.rps-text-right {
+    text-align: right;
+}

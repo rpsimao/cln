@@ -1,0 +1,98 @@
+<section class="content">
+
+	<div class="row">
+		<div class="col-md-12">
+
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="#tab1" data-toggle="tab" aria-expanded="true">
+						<i class="fa fa-user"></i>
+						<?=$this->translate(gettext("Users Profile"));?></a>
+				</li>
+				<li class="">
+					<a href="#tab2" data-toggle="tab" aria-expanded="true">
+						<i class="fa fa-user"></i>
+						User Profile</a>
+				</li>
+
+
+			</ul>
+
+
+		</div>
+	</div>
+</section>
+
+
+<div class="tab-content mar-top">
+	<div id="tab1" class="tab-pane fade active in">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel">
+					<div class="panel-heading">
+
+						<div class="rps-text-right" style="padding-right: 10px;"><button class="btn btn-primary" id="admin-create-new-user"><i class="fa fa-user-plus"></i> <?=$this->translate(gettext("Create New User"));?></button></div>
+
+					</div>
+					<div class="panel-body">
+						<table class="table table-bordered table-responsive table-hover table-advance table-striped" id="admin-table-users">
+							<thead>
+								<tr>
+									<th>
+										<?=$this->translate(gettext("Username"));?>
+									</th>
+									<th>
+										<?=$this->translate(gettext("Password"));?>
+									</th>
+									<th>
+										<?=$this->translate(gettext("Role"));?>
+									</th>
+									<th>
+										<?=$this->translate(gettext("Clinic"));?>
+									</th>
+									<th><?=$this->translate(gettext("Edit"));?></th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php foreach ($this->all as $user): ?>
+									<tr id="row-<?=$user["id"]?>">
+										<td id="username-<?=$user['id'] ?>"><?=$user["username"]?></td>
+										<td id="passwd-<?=$user['id'] ?>"><?=$user["password"]?></td>
+										<td id="roles-<?=$user['id'] ?>"><?=$user["roles"]?></td>
+										<td id="clinic-<?=$user['id'] ?>"><?=$user["clinic"]?></td>
+										<td>
+											<button class="btn btn-green" id="edit-<?=$user['id'] ?>"><i class="fa fa-edit"></i></button>
+											<button class="btn btn-danger" id="trash-<?=$user['id'] ?>"><i class="fa fa-trash"></i></button>
+										</td>
+									</tr>
+								<?php endforeach;?>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="tab2" class="tab-pane fade in">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+
+							User Profile
+						</h3>
+
+					</div>
+					<div class="panel-body">
+						Body
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
