@@ -10,7 +10,10 @@ class Admin_IndexController extends Zend_Controller_Action
     public function init()
     {
         $this->auth = Zend_Auth::getInstance();
-        if ($this->auth->hasIdentity())
+        $this->identity = $this->auth->getIdentity();
+
+
+        if ($this->identity->roles == "admin")
         {
             $this->identity = $this->auth->getIdentity();
 
