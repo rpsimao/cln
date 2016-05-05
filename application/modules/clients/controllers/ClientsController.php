@@ -46,7 +46,7 @@ class Clients_ClientsController extends Zend_Controller_Action
 
                 $values = $form->getValues();
                 $db = new Clients_Model_Clients();
-                $id = $db->newClient($values);
+                $id = $db->insertNewRecord($values);
                 $this->_helper->flashMessenger->addMessage($this->view->translate(gettext("Client created successfully.")));
 
                 $client = $db->findByID($id);

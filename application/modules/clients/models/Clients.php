@@ -1,38 +1,14 @@
 <?php
 
-class Clients_Model_Clients
+class Clients_Model_Clients extends RPS_Abstract_CRUD
 {
 
-    private $table_clients;
 
     public function __construct()
     {
-        $this->table_clients = new Clients_Model_DbTable_Clients();
-    }
+        $table = new Clients_Model_DbTable_Clients();
 
-    /**
-     * Create New Client
-     * @param array $values
-     * @return string
-     */
-    public function newClient(array $values){
-
-    $this->table_clients->insert($values);
-    return $this->table_clients->getAdapter()->lastInsertId();
-
-    }
-
-    /**
-     * Find Client by ID
-     * @param $id
-     * @return array
-     * @throws Zend_Db_Table_Exception
-     */
-
-    public function findByID($id)
-    {
-        $sql = $this->table_clients->find($id);
-        return $sql->toArray();
+        parent::__construct($table);
     }
 
 
@@ -64,14 +40,14 @@ class Clients_Model_Clients
                 break;
         }
 
-        $db = $this->table_clients->select();
+        $db = $this->table->select();
 
         if ($type == "name"){
             try {
                 $names = explode(" ", $value);
                 $sql = $db->where("first_name = ?", $names[0])->where("last_name = ?",  $names[1])->where("clinic = ?", $clinic);
 
-                $rows = $this->table_clients->fetchAll($sql);
+                $rows = $this->table->fetchAll($sql);
                 return $rows->toArray();
             } catch (Zend_Exception $e){
 
@@ -80,7 +56,7 @@ class Clients_Model_Clients
         } else {
 
             $sql = $db->where("$type = ?", $value);
-            $rows = $this->table_clients->fetchAll($sql);
+            $rows = $this->table->fetchAll($sql);
             return $rows->toArray();
         }
     }

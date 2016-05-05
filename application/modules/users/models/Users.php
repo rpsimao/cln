@@ -1,43 +1,18 @@
 <?php
 
-class Users_Model_Users
+class Users_Model_Users extends RPS_Abstract_CRUD
 {
 
-    private $table;
 
     public function __construct()
     {
-        $this->table = new Users_Model_DbTable_Users();
-    }
+        $table = new Users_Model_DbTable_Users();
 
-
-    public function getAll()
-    {
-
-        $sql = $this->table->select();
-
-        $rows = $this->table->fetchAll($sql)->toArray();
-
-        return $rows;
-
+        parent::__construct($table);
     }
 
 
 
-    public function insertNewUser(array $values)
-    {
-        $this->table->insert($values);
-        return $this->table->getAdapter()->lastInsertId();
-    }
-
-    
-    
-    public function removeUser($id)
-    {
-        $where = $this->table->getAdapter()->quoteInto('id = ?', (int) $id);
-        $this->table->delete($where);
-        
-    }
 
 
 }

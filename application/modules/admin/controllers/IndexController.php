@@ -63,7 +63,7 @@ class Admin_IndexController extends Zend_Controller_Action
 
 
         $db = new Users_Model_Users();
-        $resp = $db->insertNewUser($dbArray);
+        $resp = $db->insertNewRecord($dbArray);
 
         $this->getResponse()->appendBody($resp);
         
@@ -77,7 +77,7 @@ class Admin_IndexController extends Zend_Controller_Action
         $param = $this->_getParam("id");
 
         $db = new Users_Model_Users();
-        $db->removeUser($param);
+        $db->removeRecord($param);
 
     }
 
