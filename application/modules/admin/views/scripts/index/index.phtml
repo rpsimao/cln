@@ -95,13 +95,19 @@
 							<thead>
 							<tr>
 								<th><i class="fa fa-tags"></i>
-									<?=$this->translate(gettext("Type"));?>
+									<?=$this->translate(gettext("Body Zone"));?>
 								</th>
 								<th><i class="fa fa-file-text-o"></i>
-									<?=$this->translate(gettext("Description"));?>
+									<?=$this->translate(gettext("Description (French)"));?>
 								</th>
-								<th><i class="fa fa-trash"></i>
-									<?=$this->translate(gettext("Trash"));?>
+								<th><i class="fa fa-file-text-o"></i>
+									<?=$this->translate(gettext("Description (English)"));?>
+								</th>
+								<th><i class="fa fa-file-text-o"></i>
+									<?=$this->translate(gettext("Description (German)"));?>
+								</th>
+								<th><i class="fa fa-edit"></i>
+									<?=$this->translate(gettext("Edit"));?>
 								</th>
 							</tr>
 							</thead>
@@ -132,13 +138,16 @@
 							<thead>
 							<tr>
 								<th><i class="fa fa-tags"></i>
-									<?=$this->translate(gettext("Type"));?>
+									<?=$this->translate(gettext("Body Zone (French)"));?>
 								</th>
-								<th><i class="fa fa-file-text-o"></i>
-									<?=$this->translate(gettext("Description"));?>
+								<th><i class="fa fa-tags"></i>
+									<?=$this->translate(gettext("Body Zone (English)"));?>
 								</th>
-								<th><i class="fa fa-trash"></i>
-									<?=$this->translate(gettext("Trash"));?>
+								<th><i class="fa fa-tags"></i>
+									<?=$this->translate(gettext("Body Zone (German)"));?>
+								</th>
+								<th><i class="fa fa-edit"></i>
+									<?=$this->translate(gettext("Edit"));?>
 								</th>
 							</tr>
 							</thead>
@@ -157,3 +166,4 @@
 </div>
 
 <?=$this->partial("partials/newtreatment.phtml")?>
+<?=$this->partial("partials/bodyzones.phtml")?>

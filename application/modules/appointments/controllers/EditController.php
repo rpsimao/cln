@@ -32,11 +32,8 @@ class Appointments_EditController extends Zend_Controller_Action
         $id = $this->getParam("id");
 
         $db = new Appointments_Model_Appointments();
-        $this->view->record = $db->getAppointmentByID($id);
-
-
-
-
+        $this->view->record = $db->findByID($id);
+        
     }
 
 

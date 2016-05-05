@@ -288,6 +288,7 @@
           <modelsDirectory>
             <dbTableDirectory>
               <dbTableFile dbTableName="Bodyzones"/>
+              <dbTableFile dbTableName="Treatments"/>
             </dbTableDirectory>
             <modelFile modelName="Bodyzones"/>
           </modelsDirectory>

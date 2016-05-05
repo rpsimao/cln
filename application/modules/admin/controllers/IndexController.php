@@ -82,5 +82,19 @@ class Admin_IndexController extends Zend_Controller_Action
     }
 
 
+    public function bodyzonesAction()
+    {
+        $this->_helper->viewRenderer->setNoRender(true);
+        $this->_helper->layout->disableLayout();
+
+        $db = new Admin_Model_Bodyzones();
+
+        var_dump($db->findByID("q"));
+
+
+
+    }
+
+
 }
 

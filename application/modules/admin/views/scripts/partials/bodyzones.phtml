@@ -1,0 +1,40 @@
+<div class="modal fade in" id="newbodyzone" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"><?=$this->translate(gettext("New Body Zone"));?></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" id="new-treatment-modal-lang">
+                    <div class="col-md-12">
+
+
+                        <h4><?=$this->translate(gettext("French"));?></h4>
+                        <p>
+                            <input id="zone_fr" name="zone_fr" type="text" placeholder="<?=$this->translate(gettext("Description"));?>" class="form-control">
+                        </p>
+
+
+                        <h4><?=$this->translate(gettext("English"));?></h4>
+                        <p>
+                            <input id="zone_en" name="zone_en" type="text" placeholder="<?=$this->translate(gettext("Description"));?>" class="form-control">
+                        </p>
+
+
+                        <h4><?=$this->translate(gettext("German"));?></h4>
+
+                        <p>
+                            <input id="zone_de" name="zone_de" type="text" placeholder="<?=$this->translate(gettext("Description"));?>" class="form-control">
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn"><?=$this->translate(gettext("Close"));?></button>
+                <button type="button" id="save-new-bodyzone" class="btn btn-primary"><?=$this->translate(gettext("Save"));?></button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -18,8 +18,8 @@
 			<form action="/appointments/new/create" method="post">
 				<div class="form-body">
 
-					<input type="hidden" value="<?=$this->record["clientid"];?>" name="clientid" id="clientid">
-					<input type="hidden" value="<?=$this->record["id"];?>" name="id" id="id">
+					<input type="hidden" value="<?=$this->record[0]["clientid"];?>" name="clientid" id="clientid">
+					<input type="hidden" value="<?=$this->record[0]["id"];?>" name="id" id="id">
 
 					<div class="form-group pad-top40">
 						<div class="col-md-4">
@@ -27,7 +27,7 @@
                                              <span class="input-group-addon">
 												 <i class="fa fa-user"></i>
 											 </span>
-								<input type="text" class="form-control" value="<?=$this->record["client_name"];?>" name="client_name" id="client_name"></div>
+								<input type="text" class="form-control" value="<?=$this->record[0]["client_name"];?>" name="client_name" id="client_name"></div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -36,7 +36,7 @@
                                              <span class="input-group-addon">
 												 <i class="fa fa-calendar"></svg></i>
                                                                     </span>
-								<input type="text" name="date_app" id="date_app" class="form-control" value="<?=$this->record["date_app"];?>" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask="">
+								<input type="text" name="date_app" id="date_app" class="form-control" value="<?=$this->record[0]["date_app"];?>" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask="">
 							</div>
 						</div>
 
@@ -52,7 +52,7 @@
 								<div class="input-group select2-bootstrap-prepend">
                                         <span class="input-group-addon">
                                             <input type="checkbox" class="chk1" checked></span>
-									<?=$this->partial("partials/typeOfTreatmentPopulate.phtml", array("id"=>"type_treatment", "values" => $this->record["type_treatment"]));?>
+									<?=$this->partial("partials/typeOfTreatmentPopulate.phtml", array("id"=>"type_treatment", "values" => $this->record[0]["type_treatment"]));?>
 								</div>
 							</div>
 						</div>
@@ -67,7 +67,7 @@
 							<div class="input-group select2-bootstrap-prepend">
                                         <span class="input-group-addon">
                                             <input type="checkbox" class="chk1" checked></span>
-								<?=$this->partial('partials/treatmentDescriptionPopulate.phtml', array("id"=>"desc_treatment", "values"=> $this->record["desc_treatment"]))?>
+								<?=$this->partial('partials/treatmentDescriptionPopulate.phtml', array("id"=>"desc_treatment", "values"=> $this->record[0]["desc_treatment"]))?>
 							</div>
 						</div>
 					</div>
@@ -84,7 +84,7 @@
 							<div class="input-group select2-bootstrap-prepend">
                                         <span class="input-group-addon">
                                             <input type="checkbox" class="chk1" checked></span>
-								<?=$this->partial("partials/typeOfTreatmentPopulate.phtml", array("id"=>"type_treatment_future", "values"=> $this->record["type_treatment_future"]));?>
+								<?=$this->partial("partials/typeOfTreatmentPopulate.phtml", array("id"=>"type_treatment_future", "values"=> $this->record[0]["type_treatment_future"]));?>
 							</div>
 						</div>
 					</div>
@@ -97,7 +97,7 @@
 							<div class="input-group select2-bootstrap-prepend">
                                         <span class="input-group-addon">
                                             <input type="checkbox" class="chk1" checked></span>
-								<?=$this->partial('partials/treatmentDescriptionPopulate.phtml', array("id"=>"desc_treatment_future", "values"=> $this->record["desc_treatment_future"]))?>
+								<?=$this->partial('partials/treatmentDescriptionPopulate.phtml', array("id"=>"desc_treatment_future", "values"=> $this->record[0]["desc_treatment_future"]))?>
 							</div>
 						</div>
 					</div>
@@ -122,10 +122,10 @@
 												<span class="input-group-addon">
 													<input type="checkbox" class="chk1" checked></span>
 									<select id="select2-disabled-inputs-single" name="type_of_skin[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>" multiple>
-										<option value="<?=$this->translate(gettext("Light"));?>" <?=RPS_Aux_FormElements::multiSelect($this->translate(gettext("Light")), $this->record["type_of_skin"]);?>><?=$this->translate(gettext("Light"));?></option>
-										<option value="<?=$this->translate(gettext("Dark"));?>" <?=RPS_Aux_FormElements::multiSelect($this->translate(gettext("Dark")), $this->record["type_of_skin"]);?>><?=$this->translate(gettext("Dark"));?></option>
-										<option value="<?=$this->translate(gettext("Mate"));?>" <?=RPS_Aux_FormElements::multiSelect($this->translate(gettext("Mate")), $this->record["type_of_skin"]);?>><?=$this->translate(gettext("Mate"));?></option>
-										<option value="<?=$this->translate(gettext("Black"));?>" <?=RPS_Aux_FormElements::multiSelect($this->translate(gettext("Black")), $this->record["type_of_skin"]);?>><?=$this->translate(gettext("Black"));?></option>
+										<option value="<?=$this->translate(gettext("Light"));?>" <?=RPS_Aux_FormElements::multiSelect($this->translate(gettext("Light")), $this->record[0]["type_of_skin"]);?>><?=$this->translate(gettext("Light"));?></option>
+										<option value="<?=$this->translate(gettext("Dark"));?>" <?=RPS_Aux_FormElements::multiSelect($this->translate(gettext("Dark")), $this->record[0]["type_of_skin"]);?>><?=$this->translate(gettext("Dark"));?></option>
+										<option value="<?=$this->translate(gettext("Mate"));?>" <?=RPS_Aux_FormElements::multiSelect($this->translate(gettext("Mate")), $this->record[0]["type_of_skin"]);?>><?=$this->translate(gettext("Mate"));?></option>
+										<option value="<?=$this->translate(gettext("Black"));?>" <?=RPS_Aux_FormElements::multiSelect($this->translate(gettext("Black")), $this->record[0]["type_of_skin"]);?>><?=$this->translate(gettext("Black"));?></option>
 									</select>
 								</div>
 							</div>
