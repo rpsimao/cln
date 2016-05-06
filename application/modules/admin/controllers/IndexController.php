@@ -37,8 +37,14 @@ class Admin_IndexController extends Zend_Controller_Action
 
         $this->view->all = $db->getAll();
 
-       
-      
+        $dbBodyZones = new Admin_Model_Bodyzones();
+        $this->view->bodyZones = $dbBodyZones->getZonesByLang();
+
+        $this->view->lang = RPS_Aux_GetLocale::get();
+        
+        $dbTraetment = new Admin_Model_Treatments();
+        $this->view->treatments = $dbTraetment->getAll();
+
 
     }
 
@@ -89,12 +95,71 @@ class Admin_IndexController extends Zend_Controller_Action
 
         $db = new Admin_Model_Bodyzones();
 
-        var_dump($db->findByID("q"));
+       
 
 
 
     }
 
+    public function treatmentAction()
+    {
+
+        $this->_helper->viewRenderer->setNoRender(true);
+        $this->_helper->layout->disableLayout();
+
+        if ($this->getRequest()->isPost())
+        {
+            $params = $this->getAllParams();
+
+            $db = new Admin_Model_Treatments();
+            $msg = $db->filterZonesByLangAndInsertTreatment($params);
+
+            //$this->getResponse()->appendBody(var_dump($msg));
+        }
+    }
+
+    public function treatmentdeleteAction()
+    {
+        $this->_helper->viewRenderer->setNoRender(true);
+        $this->_helper->layout->disableLayout();
+
+
+        if ($this->getRequest()->isPost()){
+
+            $id = $this->_getParam("id");
+
+            $db = new Admin_Model_Treatments();
+            $db->removeRecord($id);
+
+
+        }
+    }
+
+    public function treatmenteditAction()
+    {
+        $this->_helper->viewRenderer->setNoRender(true);
+        $this->_helper->layout->disableLayout();
+
+
+        if ($this->getRequest()->isPost()){
+
+            $params = $this->getAllParams();
+
+            $values = array(
+                "description_en" => $params["en"],
+                "description_fr" => $params["fr"],
+                "description_de" => $params["de"],
+
+            );
+
+            $db = new Admin_Model_Treatments();
+            $db->updateRecord($values, $params["id"]);
+
+
+
+        }
+
+    }
 
 }
 

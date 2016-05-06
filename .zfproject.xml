@@ -291,6 +291,7 @@
               <dbTableFile dbTableName="Treatments"/>
             </dbTableDirectory>
             <modelFile modelName="Bodyzones"/>
+            <modelFile modelName="Treatments"/>
           </modelsDirectory>
           <servicesDirectory enabled="false"/>
           <viewsDirectory>

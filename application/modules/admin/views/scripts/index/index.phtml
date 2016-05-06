@@ -62,10 +62,10 @@
 							<tbody>
 								<?php foreach ($this->all as $user): ?>
 									<tr id="row-<?=$user["id"]?>">
-										<td id="username-<?=$user['id'] ?>"><?=$user["username"]?></td>
-										<td id="passwd-<?=$user['id'] ?>"><?=$user["password"]?></td>
-										<td id="roles-<?=$user['id'] ?>"><?=$user["roles"]?></td>
-										<td id="clinic-<?=$user['id'] ?>"><?=$user["clinic"]?></td>
+										<td id="username-<?=$user['id'] ?>"><?=$this->escape($user["username"])?></td>
+										<td id="passwd-<?=$user['id'] ?>"><?=$this->escape($user["password"])?></td>
+										<td id="roles-<?=$user['id'] ?>"><?=$this->escape($user["roles"])?></td>
+										<td id="clinic-<?=$user['id'] ?>"><?=$this->escape($user["clinic"])?></td>
 										<td>
 											<button class="btn btn-danger" id="trash-<?=$user['id'] ?>" onclick="removeUser(<?=$user['id']?>)"><i class="fa fa-trash"></i></button>
 										</td>
@@ -112,7 +112,19 @@
 							</tr>
 							</thead>
 							<tbody>
+							<?php foreach ($this->treatments as $item): ?>
+								<tr id="treatment-id-for-record-<?= $this->escape($item['id']) ?>">
+									<td id="treatment-lang-<?= $this->escape($item['id']) ?>"><?= $this->escape($item["type_$this->lang"]) ?></td>
+									<td id="treatment-desc-fr-<?= $this->escape($item['id']) ?>"><?= $this->escape($item["description_fr"]) ?></td>
+									<td id="treatment-desc-en-<?= $this->escape($item['id']) ?>"><?= $this->escape($item["description_en"]) ?></td>
+									<td id="treatment-desc-de-<?= $this->escape($item['id']) ?>"><?= $this->escape($item["description_de"]) ?></td>
+									<td id="traetment-edit-btn-<?= $this->escape($item['id']) ?>">
+										<button class="btn btn-success" onclick="EditTreatmentBoard('<?=$item["id"]?>')"><i class="fa fa-edit"></i></button>
+										<button class="btn btn-danger" onclick="DelTreatmentBoard('<?=$item["id"]?>')"><i class="fa fa-trash"></i></button>
+									</td>
+								</tr>
 
+							<?php endforeach; ?>
 							</tbody>
 						</table>
 
@@ -152,6 +164,24 @@
 							</tr>
 							</thead>
 							<tbody>
+								<?php foreach ($this->bodyZones as $zone): ?>
+									<tr id="<?=$this->escape($zone["id"])?>">
+										<td id="zone-fr-<?=$zone["id"]?>">
+											<?=$this->escape($zone["zone_fr"]) ?>
+										</td>
+										<td id="zone-en-<?=$zone["id"]?>">
+											<?=$this->escape($zone["zone_en"]) ?>
+										</td>
+										<td id="zone-de-<?=$zone["id"]?>">
+											<?=$this->escape($zone["zone_de"])?>
+										</td>
+										<td>
+											<button class="btn btn-success" id="body-zone-edit-<?=$zone["id"]?>"><i class="fa fa-edit"></i> </button>
+											<button class="btn btn-danger" id="body-zone-del-<?=$zone["id"]?>"><i class="fa fa-trash"></i> </button>
+										</td>
+									</tr>
+
+								<?php endforeach; ?>
 
 							</tbody>
 						</table>
@@ -165,5 +195,52 @@
 
 </div>
 
-<?=$this->partial("partials/newtreatment.phtml")?>
+<div class="modal fade in" id="newtreatment" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title"><?=$this->translate(gettext("New Treatment"));?></h4>
+			</div>
+			<div class="modal-body">
+				<div class="row" id="new-treatment-modal-lang">
+					<div class="col-md-12">
+						<h4><?=$this->translate(gettext("Type"));?></h4>
+						<p>
+							<select id="type" name="type" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>">
+								<option value=""></option>
+								<?php foreach ($this->bodyZones as $zone) :?>
+									<option value="<?= $this->escape($zone["zone_en"] . ";" . $zone["zone_fr"] . ";". $zone["zone_de"]) ?>"><?= $this->escape($zone["zone_$this->lang"]) ?></option>
+								<?php endforeach; ?>
+							</select>
+						</p>
+
+						<h4><?=$this->translate(gettext("French"));?></h4>
+						<p>
+							<input id="description_fr" name="description_fr" type="text" placeholder="<?=$this->translate(gettext("Description"));?>" class="form-control">
+						</p>
+
+
+						<h4><?=$this->translate(gettext("English"));?></h4>
+						<p>
+							<input id="description_en" name="description_en" type="text" placeholder="<?=$this->translate(gettext("Description"));?>" class="form-control">
+						</p>
+
+
+						<h4><?=$this->translate(gettext("German"));?></h4>
+
+						<p>
+							<input id="description_de" name="description_de" type="text" placeholder="<?=$this->translate(gettext("Description"));?>" class="form-control">
+						</p>
+
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" data-dismiss="modal" class="btn"><?=$this->translate(gettext("Close"));?></button>
+				<button type="button" data-dismiss="modal" id="save-treatment" class="btn btn-primary" onclick="sendTreatmentDB('<?=$this->lang?>')"><?=$this->translate(gettext("Save"));?></button>
+			</div>
+		</div>
+	</div>
+</div>
 <?=$this->partial("partials/bodyzones.phtml")?>

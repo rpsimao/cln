@@ -101,3 +101,157 @@ function removeUser(id) {
     });
 }
 
+
+function sendTreatmentDB(lang) {
+
+    var type = $("#type");
+    var desc_fr = $("#description_fr");
+    var desc_en = $("#description_en");
+    var desc_de = $("#description_de");
+    var table = $("#admin-table-treatments");
+
+
+    var sendData = $.post( "/admin/index/treatment", { type: type.val(), desc_fr: desc_fr.val(), desc_en: desc_en.val(), desc_de: desc_de.val()} );
+
+    sendData.done(function(data){
+
+        var typeVal = type.val();
+
+        var zone = typeVal.split(";");
+
+        var zonesLang = {fr:zone[0], en:zone[1], de:zone[2]};
+
+        if (lang == "fr"){
+
+            var bodyZone = zonesLang.fr;
+
+        } else if (lang == "en"){
+
+            var bodyZone = zonesLang.en;
+
+        } else if (lang == "de"){
+
+            var bodyZone = zonesLang.de;
+        }
+
+        var html = '<tr id="'+data+'"><td>'+bodyZone+'</td><td>'+desc_fr .val()+'</td><td>'+desc_en.val()+'</td><td>'+desc_de.val()+'</td><td><button class="btn btn-success" onclick="EditTreatmentBoard('+data+')"><i class="fa fa-edit"></i></button></td>';
+
+        table.append(html);
+
+        type.val($(type).prop('defaultSelected'));
+        desc_de.val("");
+        desc_en.val("");
+        desc_fr.val("");
+
+
+    });
+
+
+
+}
+
+function EditTreatmentBoard(id){
+
+    var tableTR = $("#treatment-id-for-record-"+id);
+    var lang = $("#treatment-lang-"+id);
+    var desc_fr =  $("#treatment-desc-fr-"+id);
+    var desc_en = $("#treatment-desc-en-"+id);
+    var desc_de = $("#treatment-desc-de-"+id);
+    var buttonsTD = $("#traetment-edit-btn-"+id);
+    var oldTR = tableTR.html();
+
+    var langeditFR = '<input type="text" name="new-description-fr" id="new-description-fr" class="form-control" value="'+desc_fr.text()+'">';
+    var langeditEN = '<input type="text" name="new-description-en" id="new-description-en" class="form-control" value="'+desc_en.text()+'">';
+    var langeditDE = '<input type="text" name="new-description-de" id="new-description-de" class="form-control" value="'+desc_de.text()+'">';
+
+    var buttonInsert = '<button class="btn btn-success" onclick="sendNewTreatmentRecord('+id+')"><i class="fa fa-check"></i></button>';
+    var buttonCancel = '<button class="btn btn-primary" id="cancel-new-treatment-edit"><i class="fa fa-times"></i></button>';
+
+    
+    desc_fr.html(langeditFR);
+    desc_en.html(langeditEN);
+    desc_de.html(langeditDE);
+    buttonsTD.html(buttonInsert+buttonCancel);
+
+    $("#cancel-new-treatment-edit").on("click", function(){
+
+        tableTR.html(oldTR);
+        console.re.log(oldTR);
+    });
+
+}
+
+function DelTreatmentBoard(id)
+{
+
+    var sendData = $.post("/admin/index/treatmentdelete", { id: id} );
+
+    var trID = $("#treatment-id-for-record");
+
+    sendData.done(function(){
+
+        trID.remove();
+    });
+}
+
+function sendNewTreatmentRecord(id)
+{
+
+    
+    
+    var fr = $("#new-description-fr");
+    var en = $("#new-description-en");
+    var de = $("#new-description-de");
+
+
+    var sendData = $.post("/admin/index/treatmentedit", { id: id, fr: fr.val(), en: en.val(), de: de.val()} );
+    
+    
+    sendData.done(function(){
+
+        var desc_fr =  $("#treatment-desc-fr-"+id);
+        var desc_en = $("#treatment-desc-en-"+id);
+        var desc_de = $("#treatment-desc-de-"+id);
+        var buttonsTD = $("#traetment-edit-btn-"+id);
+        var buttons ='<button class="btn btn-success" onclick="EditTreatmentBoard('+id+')"><i class="fa fa-edit"></i></button> <button class="btn btn-danger" onclick="DelTreatmentBoard('+id+')"><i class="fa fa-trash"></i></button>';
+
+        desc_fr.text(fr.val());
+        desc_en.text(en.val());
+        desc_de.text(de.val());
+        buttonsTD.html(buttons);
+
+
+
+
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
