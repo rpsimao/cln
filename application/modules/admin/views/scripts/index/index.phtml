@@ -206,8 +206,8 @@
 				<div class="row" id="new-treatment-modal-lang">
 					<div class="col-md-12">
 						<h4><?=$this->translate(gettext("Type"));?></h4>
-						<p>
-							<select id="type" name="type" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>">
+						<p><form id="new-treatment-form">
+							<select id="type" name="type" class="form-control" placeholder="<?=$this->translate(gettext("Click to select"));?>">
 								<option value=""></option>
 								<?php foreach ($this->bodyZones as $zone) :?>
 									<option value="<?= $this->escape($zone["zone_en"] . ";" . $zone["zone_fr"] . ";". $zone["zone_de"]) ?>"><?= $this->escape($zone["zone_$this->lang"]) ?></option>
@@ -232,7 +232,7 @@
 						<p>
 							<input id="description_de" name="description_de" type="text" placeholder="<?=$this->translate(gettext("Description"));?>" class="form-control">
 						</p>
-
+						</form>
 					</div>
 				</div>
 			</div>

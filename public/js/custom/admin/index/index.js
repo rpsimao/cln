@@ -20,8 +20,20 @@ $(function() {
         $("#new-username").focus();
         
     });
+
+    $("#save-new-bodyzone").click(function(){
+
+
+        sendNewBodyZone();
+
+    });
     
-    
+
+
+    $("#newbodyzone").on('show.bs.modal', function (){
+
+        $("#new-zone_fr").focus();
+    })
 });
 
 
@@ -119,7 +131,7 @@ function sendTreatmentDB(lang) {
 
         var zone = typeVal.split(";");
 
-        var zonesLang = {fr:zone[0], en:zone[1], de:zone[2]};
+        var zonesLang = {en:zone[0], fr:zone[1], de:zone[2]};
 
         if (lang == "fr"){
 
@@ -134,9 +146,9 @@ function sendTreatmentDB(lang) {
             var bodyZone = zonesLang.de;
         }
 
-        var html = '<tr id="treatment-id-for-record-'+data+'"><td>'+bodyZone+'</td><td id="treatment-desc-fr-'+data+'">'+desc_fr .val()+'</td><td id="treatment-desc-en-'+data+'">'+desc_en.val()+'</td><td id="treatment-desc-de-'+data+'">'+desc_de.val()+'</td><td id="traetment-edit-btn-'+data+'"><button class="btn btn-success" onclick="EditTreatmentBoard('+data+')"><i class="fa fa-edit"></i></button><button class="btn btn-danger" onclick="DelTreatmentBoard('+data+')"><i class="fa fa-trash"></i></button></td>';
+        var html = '<tr id="treatment-id-for-record-'+data+'"><td><i class="fa fa-check green" style="color: green"></i> '+bodyZone+'</td><td id="treatment-desc-fr-'+data+'">'+desc_fr .val()+'</td><td id="treatment-desc-en-'+data+'">'+desc_en.val()+'</td><td id="treatment-desc-de-'+data+'">'+desc_de.val()+'</td><td id="traetment-edit-btn-'+data+'"><button class="btn btn-success" onclick="EditTreatmentBoard('+data+')"><i class="fa fa-edit"></i></button><button class="btn btn-danger" onclick="DelTreatmentBoard('+data+')"><i class="fa fa-trash"></i></button></td>';
 
-        table.append(html);
+        table.prepend(html);
 
         type.val($(type).prop('defaultSelected'));
         desc_de.val("");
@@ -268,16 +280,16 @@ function editBodyZone(id) {
 function delBodyZone(id) {
 
 
-    var zoneTR = $("#body-zone-"+id);
+
 
 
     var sendData = $.post("/admin/index/bodyzonedelete", { id: id} );
 
-    var trID = $("#treatment-id-for-record-"+id);
+    var zoneTR = $("#body-zone-"+id);
 
     sendData.done(function(){
 
-        trID.remove();
+        zoneTR.remove();
     });
 
 
@@ -309,10 +321,48 @@ function sendNewBodyZone(id) {
         desc_de.text(zoneDE.val());
         buttonsTD.html(buttons);
 
+        $('#new-treatment-form').trigger("reset");
+
 
     });
     
     
+
+}
+
+
+function sendNewBodyZone()
+{
+
+    var fr = $("#new-zone_fr");
+    var en = $("#new-zone_en");
+    var de = $("#new-zone_de");
+
+
+    if (fr.val() !="" && en.val() !="" && de.val() !="" ){
+
+        var sendData = $.post("/admin/index/bodyzones", {fr: fr.val(), en: en.val(), de: de.val()} );
+
+
+        sendData.done(function(){
+
+
+            fr.val('');
+            en.val('');
+            de.val('');
+
+            $("#newbodyzone").modal('hide');
+
+
+
+        });
+
+    }
+
+
+
+
+
 
 }
 

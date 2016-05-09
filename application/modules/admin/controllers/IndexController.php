@@ -93,9 +93,25 @@ class Admin_IndexController extends Zend_Controller_Action
         $this->_helper->viewRenderer->setNoRender(true);
         $this->_helper->layout->disableLayout();
 
-        $db = new Admin_Model_Bodyzones();
+        if ($this->getRequest()->isPost()) {
 
-    }
+            $params = $this->getAllParams();
+            $db = new Admin_Model_Bodyzones();
+
+            $values = array(
+
+                "zone_en" => strtoupper($params["en"]),
+                "zone_fr" => strtoupper($params["fr"]),
+                "zone_de" => strtoupper($params["de"]),
+            );
+
+
+
+            $this->getResponse()->appendBody($db->insertNewRecord($values));
+
+        }
+
+        }
 
 
     public function bodyzonedeleteAction()
@@ -110,6 +126,7 @@ class Admin_IndexController extends Zend_Controller_Action
 
 
             $db->removeRecord($params["id"]);
+
 
         }
 
@@ -131,9 +148,9 @@ class Admin_IndexController extends Zend_Controller_Action
 
             $values = array(
 
-                "zone_en" => $params["en"],
-                "zone_fr" => $params["fr"],
-                "zone_de" => $params["de"],
+                "zone_en" => strtoupper($params["en"]),
+                "zone_fr" => strtoupper($params["fr"]),
+                "zone_de" => strtoupper($params["de"]),
 
 
             );
