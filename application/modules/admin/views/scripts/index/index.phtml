@@ -165,7 +165,7 @@
 							</thead>
 							<tbody>
 								<?php foreach ($this->bodyZones as $zone): ?>
-									<tr id="<?=$this->escape($zone["id"])?>">
+									<tr id="body-zone-<?=$this->escape($zone["id"])?>">
 										<td id="zone-fr-<?=$zone["id"]?>">
 											<?=$this->escape($zone["zone_fr"]) ?>
 										</td>
@@ -175,9 +175,9 @@
 										<td id="zone-de-<?=$zone["id"]?>">
 											<?=$this->escape($zone["zone_de"])?>
 										</td>
-										<td>
-											<button class="btn btn-success" id="body-zone-edit-<?=$zone["id"]?>"><i class="fa fa-edit"></i> </button>
-											<button class="btn btn-danger" id="body-zone-del-<?=$zone["id"]?>"><i class="fa fa-trash"></i> </button>
+										<td id="zone-buttons-<?=$zone["id"]?>">
+											<button class="btn btn-success" id="body-zone-edit-<?=$zone["id"]?>" onclick="editBodyZone(<?=$this->escape($zone["id"])?>)"><i class="fa fa-edit"></i> </button>
+											<button class="btn btn-danger" id="body-zone-del-<?=$zone["id"]?>" onclick="delBodyZone(<?=$this->escape($zone["id"])?>)"><i class="fa fa-trash"></i> </button>
 										</td>
 									</tr>
 

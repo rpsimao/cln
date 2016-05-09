@@ -95,9 +95,52 @@ class Admin_IndexController extends Zend_Controller_Action
 
         $db = new Admin_Model_Bodyzones();
 
-       
+    }
 
 
+    public function bodyzonedeleteAction()
+    {
+        $this->_helper->viewRenderer->setNoRender(true);
+        $this->_helper->layout->disableLayout();
+
+        if ($this->getRequest()->isPost()) {
+
+            $params = $this->getAllParams();
+            $db = new Admin_Model_Bodyzones();
+
+
+            $db->removeRecord($params["id"]);
+
+        }
+
+
+    }
+
+
+    public function bodyzoneeditAction()
+    {
+        $this->_helper->viewRenderer->setNoRender(true);
+        $this->_helper->layout->disableLayout();
+
+
+        if ($this->getRequest()->isPost()) {
+
+            $params = $this->getAllParams();
+            $db = new Admin_Model_Bodyzones();
+
+
+            $values = array(
+
+                "zone_en" => $params["en"],
+                "zone_fr" => $params["fr"],
+                "zone_de" => $params["de"],
+
+
+            );
+
+            $db->updateRecord($values, $params["id"]);
+
+        }
 
     }
 
@@ -114,7 +157,7 @@ class Admin_IndexController extends Zend_Controller_Action
             $db = new Admin_Model_Treatments();
             $msg = $db->filterZonesByLangAndInsertTreatment($params);
 
-            //$this->getResponse()->appendBody(var_dump($msg));
+            $this->getResponse()->appendBody($msg);
         }
     }
 
@@ -155,6 +198,7 @@ class Admin_IndexController extends Zend_Controller_Action
             $db = new Admin_Model_Treatments();
             $db->updateRecord($values, $params["id"]);
 
+            $this->getResponse()->appendBody($params["id"]);
 
 
         }

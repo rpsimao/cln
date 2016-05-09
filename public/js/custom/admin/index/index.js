@@ -134,7 +134,7 @@ function sendTreatmentDB(lang) {
             var bodyZone = zonesLang.de;
         }
 
-        var html = '<tr id="'+data+'"><td>'+bodyZone+'</td><td>'+desc_fr .val()+'</td><td>'+desc_en.val()+'</td><td>'+desc_de.val()+'</td><td><button class="btn btn-success" onclick="EditTreatmentBoard('+data+')"><i class="fa fa-edit"></i></button></td>';
+        var html = '<tr id="treatment-id-for-record-'+data+'"><td>'+bodyZone+'</td><td id="treatment-desc-fr-'+data+'">'+desc_fr .val()+'</td><td id="treatment-desc-en-'+data+'">'+desc_en.val()+'</td><td id="treatment-desc-de-'+data+'">'+desc_de.val()+'</td><td id="traetment-edit-btn-'+data+'"><button class="btn btn-success" onclick="EditTreatmentBoard('+data+')"><i class="fa fa-edit"></i></button><button class="btn btn-danger" onclick="DelTreatmentBoard('+data+')"><i class="fa fa-trash"></i></button></td>';
 
         table.append(html);
 
@@ -176,7 +176,7 @@ function EditTreatmentBoard(id){
     $("#cancel-new-treatment-edit").on("click", function(){
 
         tableTR.html(oldTR);
-        console.re.log(oldTR);
+        //console.re.log(oldTR);
     });
 
 }
@@ -186,7 +186,7 @@ function DelTreatmentBoard(id)
 
     var sendData = $.post("/admin/index/treatmentdelete", { id: id} );
 
-    var trID = $("#treatment-id-for-record");
+    var trID = $("#treatment-id-for-record-"+id);
 
     sendData.done(function(){
 
@@ -207,7 +207,7 @@ function sendNewTreatmentRecord(id)
     var sendData = $.post("/admin/index/treatmentedit", { id: id, fr: fr.val(), en: en.val(), de: de.val()} );
     
     
-    sendData.done(function(){
+    sendData.done(function(data){
 
         var desc_fr =  $("#treatment-desc-fr-"+id);
         var desc_en = $("#treatment-desc-en-"+id);
@@ -224,6 +224,95 @@ function sendNewTreatmentRecord(id)
 
 
     });
+
+}
+
+
+
+function editBodyZone(id) {
+
+    var zoneTR = $("#body-zone-"+id);
+    var zoneEN = $("#zone-en-"+id);
+    var zoneFR = $("#zone-fr-"+id);
+    var zoneDE = $("#zone-de-"+id);
+    var zoneButtons =$("#zone-buttons-"+id);
+    var oldTR = zoneTR.html();
+
+
+    var zoneEditFR = '<input type="text" name="new-zone-fr" id="new-zone-fr" class="form-control" value="'+zoneFR.text().trim()+'">';
+    var zoneEditEN = '<input type="text" name="new-zone-en" id="new-zone-en" class="form-control" value="'+zoneEN.text().trim()+'">';
+    var zoneEditDE = '<input type="text" name="new-zone-de" id="new-zone-de" class="form-control" value="'+zoneDE.text().trim()+'">';
+
+    var buttonInsert = '<button class="btn btn-success" onclick="sendNewBodyZone('+id+')"><i class="fa fa-check"></i></button>';
+    var buttonCancel = '<button class="btn btn-primary" id="cancel-new-body-zone-edit"><i class="fa fa-times"></i></button>';
+
+
+
+    zoneFR.html(zoneEditFR);
+    zoneEN.html(zoneEditEN);
+    zoneDE.html(zoneEditDE);
+    zoneButtons.html(buttonInsert+buttonCancel);
+
+
+    $("#cancel-new-body-zone-edit").on("click", function(){
+
+        zoneTR.html(oldTR);
+
+    });
+
+
+
+}
+
+
+function delBodyZone(id) {
+
+
+    var zoneTR = $("#body-zone-"+id);
+
+
+    var sendData = $.post("/admin/index/bodyzonedelete", { id: id} );
+
+    var trID = $("#treatment-id-for-record-"+id);
+
+    sendData.done(function(){
+
+        trID.remove();
+    });
+
+
+
+}
+
+
+function sendNewBodyZone(id) {
+
+
+    var zoneEN = $("#new-zone-en");
+    var zoneFR = $("#new-zone-fr");
+    var zoneDE = $("#new-zone-de");
+
+
+    var sendData = $.post("/admin/index/bodyzoneedit", { id: id, fr: zoneFR.val(), en: zoneEN.val(), de: zoneDE.val()} );
+
+    sendData.done(function(){
+
+
+        var desc_fr =  $("#zone-fr-"+id);
+        var desc_en = $("#zone-en-"+id);
+        var desc_de = $("#zone-de-"+id);
+        var buttonsTD = $("#zone-buttons-"+id);
+        var buttons ='<button class="btn btn-success" onclick="editBodyZone('+id+')"><i class="fa fa-edit"></i></button> <button class="btn btn-danger" onclick="delBodyZone('+id+')"><i class="fa fa-trash"></i></button>';
+
+        desc_fr.text(zoneFR.val());
+        desc_en.text(zoneEN.val());
+        desc_de.text(zoneDE.val());
+        buttonsTD.html(buttons);
+
+
+    });
+    
+    
 
 }
 
