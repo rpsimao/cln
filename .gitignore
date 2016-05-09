@@ -15,6 +15,6 @@ Thumbs.db
 docs/
 tests/
 build/
-config/local.ini
+application/configs/local.ini
 access_log
 error_log
