@@ -38,7 +38,7 @@ class Admin_IndexController extends Zend_Controller_Action
         $this->view->all = $db->getAll();
 
         $dbBodyZones = new Admin_Model_Bodyzones();
-        $this->view->bodyZones = $dbBodyZones->getZonesByLang();
+        $this->view->bodyZones = $dbBodyZones->getAll();
 
         $this->view->lang = RPS_Aux_GetLocale::get();
         

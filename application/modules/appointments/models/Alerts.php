@@ -24,7 +24,7 @@ class Appointments_Model_Alerts
 
         $sql = $this->table_alerts->find(1);
 
-        return $sql["origin"];
+        return $sql[0]["origin"];
 
     }
 
@@ -34,7 +34,7 @@ class Appointments_Model_Alerts
 
         $sql = $this->table_alerts->find(1);
 
-        return $sql["age"];
+        return $sql[0]["age"];
 
     }
 

@@ -61,7 +61,12 @@
                                         <span class="input-group-addon">
                                             <i class="fa fa-hand-pointer-o"></i>
 										</span>
-											<?=$this->partial("partials/typeOfTreatment.phtml", array("id"=>"type_treatment"));?>
+											<select id="select2-disabled-inputs-single" name="type_treatment[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>" multiple>
+                                                <?php foreach ($this->bodyZones as $zone) :?>
+                                                    <option value="<?= $this->escape($zone["zone_".$this->lang])?>"><?= $this->escape($zone["zone_".$this->lang])?></option>
+                                                <?php endforeach;?>
+                                            </select>
+
 										</div>
 										</div>
 									</div>
@@ -77,7 +82,8 @@
                                         <span class="input-group-addon">
                                             <i class="fa fa-hand-pointer-o"></i>
 											</span>
-												<?=$this->partial('partials/treatmentDescription.phtml', array("id"=>"desc_treatment"))?>
+												<select id="typeOfTreatmentSelect" name="desc_treatment[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>" multiple>
+                                                </select>    
 											</div>
 										</div>
 									</div>

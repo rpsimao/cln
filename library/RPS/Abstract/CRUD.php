@@ -50,6 +50,7 @@ abstract class RPS_Abstract_CRUD implements RPS_Interfaces_CRUD
             $rows = $this->table->fetchAll($sql)->toArray();
 
             return $rows;
+             
         } catch (Zend_Db_Table_Exception $e) {
             return $e->getMessage() ;
         }

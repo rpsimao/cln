@@ -31,6 +31,16 @@ class Admin_Model_Treatments extends RPS_Abstract_CRUD
 
 
     }
+
+
+    public function getTreatmentsSelect(array $params, $locale)
+    {
+        $sql = $this->table->select()->where('type_'.$locale.' IN (?)', $params);
+
+        $rows = $this->table->fetchAll($sql)->toArray();
+
+        return $rows;
+    }
     
 }
 

@@ -44,12 +44,12 @@ class Appointments_NewController extends Zend_Controller_Action
         $dbAlerts = new Appointments_Model_Alerts();
         $alerts = new RPS_Aux_ClientsAlerts($clientData, $dbAlerts);
         $alerts->setId($client->getSessionID());
-        
+
+        $dbBodyZones = new Admin_Model_Bodyzones();
+        $this->view->bodyZones = $dbBodyZones->getZonesByLang();
 
         $this->view->display = $alerts->alerts();
-
-
-
+        $this->view->lang = RPS_Aux_GetLocale::get();
 
 
     }
@@ -111,6 +111,27 @@ class Appointments_NewController extends Zend_Controller_Action
         }
     }
 
+
+    public function lookfortreatmentsAction()
+    {
+        $this->_helper->viewRenderer->setNoRender(true);
+        $this->_helper->layout->disableLayout();
+
+        if($this->getRequest()->isPost()) {
+
+            $values = $this->getRequest()->getPost();
+
+
+           $db = new Admin_Model_Treatments();
+           $rows = $db->getTreatmentsSelect($values, RPS_Aux_GetLocale::get());
+
+           $options = new RPS_Aux_BuildSelect($rows);
+           $rowsOptions = $options->buildSelect();
+
+           $this->getResponse()->appendBody($rowsOptions);
+
+        }
+    }
 
 
 
