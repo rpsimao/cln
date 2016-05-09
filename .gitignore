@@ -16,3 +16,5 @@ docs/
 tests/
 build/
 config/local.ini
+access_log
+error_log
