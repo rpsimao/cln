@@ -53,7 +53,7 @@
 									<div class="form-group">
 										<div class="col-md-7">
 											<br>
-										<label for="select2-disabled-inputs-single" class="control-label">
+										<label for="type_treatment" class="control-label">
 											<?=$this->translate(gettext("What treatment will you do?"));?>
 
 										</label>
@@ -61,7 +61,7 @@
                                         <span class="input-group-addon">
                                             <i class="fa fa-hand-pointer-o"></i>
 										</span>
-											<select id="select2-disabled-inputs-single" name="type_treatment[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>" multiple>
+											<select id="type_treatment" name="type_treatment[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>" multiple>
                                                 <?php foreach ($this->bodyZones as $zone) :?>
                                                     <option value="<?= $this->escape($zone["zone_".$this->lang])?>"><?= $this->escape($zone["zone_".$this->lang])?></option>
                                                 <?php endforeach;?>
@@ -94,29 +94,34 @@
 								<div class="form-group">
 									<div class="col-md-7">
 										<br>
-										<label for="select2-disabled-inputs-single" class="control-label">
+										<label for="future-body-zone" class="control-label">
 											<?=$this->translate(gettext("Type of future treatment?"));?>
 										</label>
 										<div class="input-group select2-bootstrap-prepend">
                                         <span class="input-group-addon">
                                             <i class="fa fa-hand-pointer-o"></i>
 											</span>
-											<?=$this->partial("partials/typeOfTreatment.phtml", array("id"=>"type_treatment_future"));?>
+											<select id="future-body-zone" name="type_treatment_future[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>" multiple>
+                                                <?php foreach ($this->bodyZones as $zone) :?>
+                                                    <option value="<?= $this->escape($zone["zone_".$this->lang])?>"><?= $this->escape($zone["zone_".$this->lang])?></option>
+                                                <?php endforeach;?>
+                                            </select>
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-md-7">
 										<br>
-										<label for="select2-disabled-inputs-single" class="control-label">
+										<label for="typeOfTreatmentFutureSelect" class="control-label">
 											<?=$this->translate(gettext("Description of future treatment"));?>
 										</label>
 										<div class="input-group select2-bootstrap-prepend">
                                         <span class="input-group-addon">
                                             <i class="fa fa-hand-pointer-o"></i>
 											</span>
-											<?=$this->partial('partials/treatmentDescription.phtml', array("id"=>"desc_treatment_future"))?>
-										</div>
+                                            <select id="typeOfTreatmentFutureSelect" name="desc_treatment_future[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>" multiple>
+                                            </select>
+                                        </div>
 									</div>
 								</div>
 								<div class="col-md-7">
@@ -133,14 +138,14 @@
 									<div class="col-md-12">
 
 										<div class="col-md-4">
-												<label for="select2-disabled-inputs-single" class="control-label">
+												<label for="type_of_skin" class="control-label">
 													<?=$this->translate(gettext("Type of skin"));?>
 												</label>
 												<div class="input-group select2-bootstrap-prepend">
 												<span class="input-group-addon">
 													<i class="fa fa-hand-pointer-o"></i>
 													</span>
-													<select id="select2-disabled-inputs-single" name="type_of_skin[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>">
+													<select id="type_of_skin" name="type_of_skin[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>">
 														<option value=""></option>
 														<option value="<?=$this->translate(gettext("Light"));?>"><?=$this->translate(gettext("Light"));?></option>
 														<option value="<?=$this->translate(gettext("Dark"));?>"><?=$this->translate(gettext("Dark"));?></option>
@@ -150,14 +155,14 @@
 												</div>
 										</div>
 										<div class="col-md-4">
-											<label for="select2-disabled-inputs-single" class="control-label">
+											<label for="hair_type_1" class="control-label">
 												<?=$this->translate(gettext("Hair type "));?>1
 											</label>
 											<div class="input-group select2-bootstrap-prepend">
 												<span class="input-group-addon">
 													<i class="fa fa-hand-pointer-o"></i>
 													</span>
-												<select id="select2-disabled-inputs-single" name="hair_type_1" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>">
+												<select id="hair_type_1" name="hair_type_1" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>">
 													<option value=""></option>
 													<option value="<?=$this->translate(gettext("Thick"));?>"><?=$this->translate(gettext("Thick"));?></option>
 													<option value="<?=$this->translate(gettext("Thin"));?>"><?=$this->translate(gettext("Thin"));?></option>
@@ -166,14 +171,14 @@
 											</div>
 										</div>
 										<div class="col-md-4">
-											<label for="select2-disabled-inputs-single" class="control-label">
+											<label for="hair_type_2" class="control-label">
 												<?=$this->translate(gettext("Hair type "));?>2
 											</label>
 											<div class="input-group select2-bootstrap-prepend">
 												<span class="input-group-addon">
 													<i class="fa fa-hand-pointer-o"></i>
 													</span>
-													<select id="select2-disabled-inputs-single" name="hair_type_2" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>">
+													<select id="hair_type_2" name="hair_type_2" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>">
 														<option value=""></option>
 														<option value="<?=$this->translate(gettext("Blond"));?>"><?=$this->translate(gettext("Blond"));?></option>
 														<option value="<?=$this->translate(gettext("Brown"));?>"><?=$this->translate(gettext("Brown"));?></option>
