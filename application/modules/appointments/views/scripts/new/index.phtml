@@ -208,7 +208,7 @@
 										<label>
 											<input type="hidden" name="out_in_the_sun" value="0">
 
-											<input type="checkbox"  name="out_in_the_sun" value="1" onclick="toggleModal('out_in_the_sun','modal-3')">
+											<input type="checkbox"  id="out_in_the_sun" name="out_in_the_sun" value="1" onclick="toggleModal('out_in_the_sun','modal-3')">
 											<?=$this->translate(gettext("You are out in the sun or did you use self-tanning creams in the last 15 days?"));?>
 
 										</label>
@@ -226,7 +226,7 @@
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="laser_light" value="0">
-											<input type="checkbox" name="laser_light" value="1" onclick="toggleModal('laser_light','modal-4')"><?=$this->translate(gettext("Have you ever used laser or pulsed light?"));?>
+											<input type="checkbox" id="laser_light" name="laser_light" value="1" onclick="toggleModal('laser_light','modal-4')"><?=$this->translate(gettext("Have you ever used laser or pulsed light?"));?>
 										</label>
 										<a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-4">
 											<i class="fa fa-exclamation-triangle"></i>
@@ -245,7 +245,7 @@
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="vitamines" value="0">
-											<input type="checkbox" name="vitamines" value="1" onclick="toggleModal('vitamines','modal-5')"><?=$this->translate(gettext("Usually you take vitamins, antidepressants or anti-acne treatment?"));?>
+											<input type="checkbox" id="vitamines" name="vitamines" value="1" onclick="toggleModal('vitamines','modal-5')"><?=$this->translate(gettext("Usually you take vitamins, antidepressants or anti-acne treatment?"));?>
 										</label>
 										<a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-5">
 											<i class="fa fa-exclamation-triangle"></i>
@@ -258,7 +258,7 @@
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="hormone" value="0">
-											<input type="checkbox" name="hormone" value="1" onclick="toggleModal('hormone','modal-6')"><?=$this->translate(gettext("Do you currently have hormone treatment for infertility, menopause, endometriosis or thyroid (oral or injectable)?"));?>
+											<input type="checkbox" id="hormone" name="hormone" value="1" onclick="toggleModal('hormone','modal-6')"><?=$this->translate(gettext("Do you currently have hormone treatment for infertility, menopause, endometriosis or thyroid (oral or injectable)?"));?>
 										</label>
 										<a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-6">
 											<i class="fa fa-exclamation-triangle"></i>
@@ -271,7 +271,7 @@
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="diabetes" value="0">
-											<input type="checkbox" name="diabetes" value="1" onclick="toggleModal('diabetes','modal-7')"><?=$this->translate(gettext("Do you follow a treatment for diabetes or cholesterol?"));?>
+											<input type="checkbox" name="diabetes" id="diabetes" value="1" onclick="toggleModal('diabetes','modal-7')"><?=$this->translate(gettext("Do you follow a treatment for diabetes or cholesterol?"));?>
 										</label>
 										<a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-7">
 											<i class="fa fa-exclamation-triangle"></i>
@@ -289,7 +289,7 @@
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="pregnant" value="0">
-											<input type="checkbox" name="pregnant" value="1" onclick="toggleModal('pregnant','modal-8')"><?=$this->translate(gettext("Does it is a possibility that you are currently pregnant? Or trying to conceive?"));?>
+											<input type="checkbox" name="pregnant" id="pregnant" value="1" onclick="toggleModal('pregnant','modal-8')"><?=$this->translate(gettext("Does it is a possibility that you are currently pregnant? Or trying to conceive?"));?>
 										</label>
 										<a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-8">
 											<i class="fa fa-exclamation-triangle"></i>
@@ -303,7 +303,7 @@
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="cancer" value="0">
-											<input type="checkbox" name="cancer" value="1" onclick="toggleModal('cancer','modal-9')"><?=$this->translate(gettext("Have you ever had radiation treatments, chemotherapy due to a cancer disease?"));?>
+											<input type="checkbox" name="cancer" id="cancer" value="1" onclick="toggleModal('cancer','modal-9')"><?=$this->translate(gettext("Have you ever had radiation treatments, chemotherapy due to a cancer disease?"));?>
 										</label>
 										<a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-9">
 											<i class="fa fa-exclamation-triangle"></i>
@@ -317,7 +317,7 @@
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="sensitive_skin" value="0">
-											<input type="checkbox" name="sensitive_skin" value="1" onclick="toggleModal('sensitive_skin','modal-10')"><?=$this->translate(gettext("Do you have sensitive and easily irritated skin?"));?>
+											<input type="checkbox" name="sensitive_skin" id="sensitive_skin" value="1" onclick="toggleModal('sensitive_skin','modal-10')"><?=$this->translate(gettext("Do you have sensitive and easily irritated skin?"));?>
 										</label>
 										<a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-10">
 											<i class="fa fa-exclamation-triangle"></i>
@@ -337,31 +337,31 @@
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="burns" value="0">
-											<input type="checkbox" name="burns" value="1" onclick="toggleModal('burns','modal-11')"><?=$this->translate(gettext("inflammations, abscesses, burns?"));?>
+											<input type="checkbox" name="burns" id="burns" value="1" onclick="toggleModal('burns','modal-11')"><?=$this->translate(gettext("inflammations, abscesses, burns?"));?>
 										</label>
 									</div>
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="spots" value="0">
-											<input type="checkbox" name="spots" value="1" onclick="toggleModal('spots','modal-11')"><?=$this->translate(gettext("skin tumors, pigmentation spots?"));?>
+											<input type="checkbox" name="spots" id="spots" value="1" onclick="toggleModal('spots','modal-11')"><?=$this->translate(gettext("skin tumors, pigmentation spots?"));?>
 										</label>
 									</div>
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="scars" value="0">
-											<input type="checkbox" name="scars" value="1" onclick="toggleModal('scars','modal-11')"><?=$this->translate(gettext("scars on the treatment area?"));?>
+											<input type="checkbox" name="scars" value="1" id="scars" onclick="toggleModal('scars','modal-11')"><?=$this->translate(gettext("scars on the treatment area?"));?>
 										</label>
 									</div>
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="vascular" value="0">
-											<input type="checkbox" name="vascular" value="1" onclick="toggleModal('vascular','modal-11')"><?=$this->translate(gettext("fragile areas of vascular (ease to hematoma \"blue\"), pruritus (itching, dryness)?"));?>
+											<input type="checkbox" name="vascular" value="1" id="vascular" onclick="toggleModal('vascular','modal-11')"><?=$this->translate(gettext("fragile areas of vascular (ease to hematoma \"blue\"), pruritus (itching, dryness)?"));?>
 										</label>
 									</div>
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="tatoos" value="0">
-											<input type="checkbox" name="tatoos" value="1" onclick="toggleModal('tatoos','modal-11')"><?=$this->translate(gettext("tattoos on the area?"));?>
+											<input type="checkbox" name="tatoos" id="tatoos" value="1" onclick="toggleModal('tatoos','modal-11')"><?=$this->translate(gettext("tattoos on the area?"));?>
 										</label>
 									</div>
 								</div>
@@ -372,7 +372,7 @@
 									<div class="checkbox">
 										<label>
 											<input type="hidden" name="circulatory" value="0">
-											<input type="checkbox" name="circulatory" value="1" onclick="toggleModal('circulatory','modal-12')"><?=$this->translate(gettext("Do you have circulatory problems, varicose veins and telangiectasia?"));?>
+											<input type="checkbox" name="circulatory" id="circulatory" value="1" onclick="toggleModal('circulatory','modal-12')"><?=$this->translate(gettext("Do you have circulatory problems, varicose veins and telangiectasia?"));?>
 										</label>
 										<a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-12">
 											<i class="fa fa-exclamation-triangle"></i>

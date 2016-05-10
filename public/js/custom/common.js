@@ -1,9 +1,8 @@
 /**
- * Created by rpsimao on 03/05/16.
+ * Created by rpsimao on 03/05/16
  */
 
-function openModal(id)
-{
+function openModal(id) {
     $("#"+id).addClass("md-show");
 }
 
@@ -14,12 +13,9 @@ function closeModal(id) {
 
 function toggleModal(id1, id2){
 
-    if($("#"+id1).prop('checked',true))
+    if($("#"+id1).is(":checked")) {
 
         openModal(id2);
 
-    else
-
-        closeModal(id2);
-
+    }
 }
