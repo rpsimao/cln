@@ -11,7 +11,7 @@ class RPS_Aux_FormElements
 
 
 
-    public static function multiSelect($needle, $string){
+public static function multiSelect($needle, $string){
 
         $array = explode(";", $string);
 
@@ -25,12 +25,19 @@ class RPS_Aux_FormElements
 
 
 
-    public static function select($value)
+ public static function select($value, $row)
     {
 
+        if ($value === $row)
+            return "selected = 'selected'";
+
+    }
 
 
-
+    public static function checkbox($row)
+    {
+        if ($row == 1)
+            return " checked";
 
     }
 

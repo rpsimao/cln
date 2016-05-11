@@ -289,9 +289,11 @@
             <dbTableDirectory>
               <dbTableFile dbTableName="Bodyzones"/>
               <dbTableFile dbTableName="Treatments"/>
+              <dbTableFile dbTableName="Questions"/>
             </dbTableDirectory>
             <modelFile modelName="Bodyzones"/>
             <modelFile modelName="Treatments"/>
+            <modelFile modelName="Questions"/>
           </modelsDirectory>
           <servicesDirectory enabled="false"/>
           <viewsDirectory>

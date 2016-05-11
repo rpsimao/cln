@@ -29,10 +29,20 @@ class Appointments_EditController extends Zend_Controller_Action
 
     public function indexAction()
     {
+        $this->_helper->viewRenderer('edit');
+
         $id = $this->getParam("id");
+
+        $dbBodyZones = new Admin_Model_Bodyzones();
+        $this->view->bodyZones = $dbBodyZones->getZonesByLang();
+
+        $this->view->lang = RPS_Aux_GetLocale::get();
 
         $db = new Appointments_Model_Appointments();
         $this->view->record = $db->findByID($id);
+
+        $db1 = new Admin_Model_Treatments();
+        $this->view->allTreatments = $db1->getAllTreatmentsByLang(RPS_Aux_GetLocale::get());
         
     }
 

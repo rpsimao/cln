@@ -1,0 +1,431 @@
+<section class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-clinik">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <i class="fa fa-medkit"></i>
+                        <?=$this->translate(gettext("New Appointment"));?>
+                    </h3>
+
+                </div>
+                <div class="panel-body">
+                    <div class="box-body">
+                        <form action="/appointments/new/create" method="post">
+                            <div class="form-body">
+
+                                <input type="hidden" value="<?=$this->record[0]["clientid"];?>" name="clientid" id="clientid">
+                                <input type="hidden" value="<?=$this->record[0]["id"];?>" name="id" id="id">
+
+                                <div class="form-group pad-top40">
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                             <span class="input-group-addon">
+												 <i class="fa fa-user"></i>
+											 </span>
+                                            <input type="text" class="form-control" value="<?=$this->record[0]["client_name"];?>" name="client_name" id="client_name"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                             <span class="input-group-addon">
+												 <i class="fa fa-calendar"></svg></i>
+                                                                    </span>
+                                            <input type="text" name="date_app" id="date_app" class="form-control" value="<?=$this->record[0]["date_app"];?>" data-inputmask="'alias': 'yyyy-mm-dd'" data-mask="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-7">
+                                            <br>
+                                            <label for="type_treatment" class="control-label">
+                                                <?=$this->translate(gettext("What treatment will you do?"));?>
+
+                                            </label>
+                                            <div class="input-group select2-bootstrap-prepend">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-hand-pointer-o"></i>
+										</span>
+                                                <select id="type_treatment" name="type_treatment[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>" multiple>
+                                                    <?php foreach ($this->bodyZones as $zone) :?>
+                                                        <option value="<?= $this->escape($zone["zone_".$this->lang])?>" <?=RPS_Aux_FormElements::multiSelect($this->escape($zone["zone_".$this->lang]), $this->record[0]["type_treatment"]);?>>
+                                                            <?= $this->escape($zone["zone_".$this->lang])?>
+                                                        </option>
+                                                    <?php endforeach;?>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-7">
+                                        <br>
+                                        <label for="select2-disabled-inputs-single" class="control-label">
+                                            <?=$this->translate(gettext("Description of current treatment"));?>
+                                        </label>
+                                        <div class="input-group select2-bootstrap-prepend">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-hand-pointer-o"></i>
+											</span>
+                                            <select id="typeOfTreatmentSelect" name="desc_treatment[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>" multiple>
+                                                <?php foreach ($this->allTreatments as $zone) :?>
+                                                    <option value="<?= $this->escape($zone["description_".$this->lang])?>" <?=RPS_Aux_FormElements::multiSelect($this->escape($zone["description_".$this->lang]), $this->record[0]["desc_treatment"]);?>>
+                                                        <?= $this->escape($zone["description_".$this->lang])?>
+                                                    </option>
+                                                <?php endforeach;?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <br>
+                                    <p style="font-weight: bold;"><?=$this->translate(gettext("Further treatment in the future?"));?></p>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-7">
+                                        <br>
+                                        <label for="future-body-zone" class="control-label">
+                                            <?=$this->translate(gettext("Type of future treatment?"));?>
+                                        </label>
+                                        <div class="input-group select2-bootstrap-prepend">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-hand-pointer-o"></i>
+											</span>
+                                            <select id="future-body-zone" name="type_treatment_future[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>" multiple>
+                                                <?php foreach ($this->bodyZones as $zone) :?>
+                                                    <option value="<?= $this->escape($zone["zone_".$this->lang])?>"  <?=RPS_Aux_FormElements::multiSelect($this->escape($zone["zone_".$this->lang]), $this->record[0]["type_treatment_future"]);?>><?= $this->escape($zone["zone_".$this->lang])?></option>
+                                                <?php endforeach;?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-7">
+                                        <br>
+                                        <label for="typeOfTreatmentFutureSelect" class="control-label">
+                                            <?=$this->translate(gettext("Description of future treatment"));?>
+                                        </label>
+                                        <div class="input-group select2-bootstrap-prepend">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-hand-pointer-o"></i>
+											</span>
+                                            <select id="typeOfTreatmentFutureSelect" name="desc_treatment_future[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>" multiple><?php foreach ($this->allTreatments as $zone) :?>
+                                                    <option value="<?= $this->escape($zone["description_".$this->lang])?>" <?=RPS_Aux_FormElements::multiSelect($this->escape($zone["description_".$this->lang]), $this->record[0]["desc_treatment_future"]);?>>
+                                                        <?= $this->escape($zone["description_".$this->lang])?>
+                                                    </option>
+                                                <?php endforeach;?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <br>
+                                    <p style="font-weight: bold;">
+                                        <?=$this->translate(gettext("Patient's medical history"));?>
+                                        <a class="btn btx-xs btn-effect btn-danger" data-modal="modal-2">
+                                            <i class="fa fa-exclamation-triangle"></i>
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+
+                                        <div class="col-md-4">
+                                            <label for="type_of_skin" class="control-label">
+                                                <?=$this->translate(gettext("Type of skin"));?>
+                                            </label>
+                                            <div class="input-group select2-bootstrap-prepend">
+												<span class="input-group-addon">
+													<i class="fa fa-hand-pointer-o"></i>
+													</span>
+                                                <select id="type_of_skin" name="type_of_skin[]" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>">
+                                                    <option value=""></option>
+                                                    <option value="<?=$this->translate(gettext("Light"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Light")), $this->record[0]["type_of_skin"])?>><?=$this->translate(gettext("Light"));?></option>
+                                                    <option value="<?=$this->translate(gettext("Dark"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Dark")), $this->record[0]["type_of_skin"])?>><?=$this->translate(gettext("Dark"));?></option>
+                                                    <option value="<?=$this->translate(gettext("Mate"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Mate")), $this->record[0]["type_of_skin"])?>><?=$this->translate(gettext("Mate"));?></option>
+                                                    <option value="<?=$this->translate(gettext("Black"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Black")), $this->record[0]["type_of_skin"])?>><?=$this->translate(gettext("Black"));?></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="hair_type_1" class="control-label">
+                                                <?=$this->translate(gettext("Hair type "));?>1
+                                            </label>
+                                            <div class="input-group select2-bootstrap-prepend">
+												<span class="input-group-addon">
+													<i class="fa fa-hand-pointer-o"></i>
+													</span>
+                                                <select id="hair_type_1" name="hair_type_1" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>">
+                                                    <option value=""></option>
+                                                    <option value="<?=$this->translate(gettext("Thick"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Thick")), $this->record[0]["hair_type_1"])?>><?=$this->translate(gettext("Thick"));?></option>
+                                                    <option value="<?=$this->translate(gettext("Thin"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Thin")), $this->record[0]["hair_type_1"])?>><?=$this->translate(gettext("Thin"));?></option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="hair_type_2" class="control-label">
+                                                <?=$this->translate(gettext("Hair type "));?>2
+                                            </label>
+                                            <div class="input-group select2-bootstrap-prepend">
+												<span class="input-group-addon">
+													<i class="fa fa-hand-pointer-o"></i>
+													</span>
+                                                <select id="hair_type_2" name="hair_type_2" class="form-control select2" placeholder="<?=$this->translate(gettext("Click to select"));?>">
+                                                    <option value=""></option>
+                                                    <option value="<?=$this->translate(gettext("Blond"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Blond")), $this->record[0]["hair_type_2"])?>><?=$this->translate(gettext("Blond"));?></option>
+                                                    <option value="<?=$this->translate(gettext("Brown"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Brown")), $this->record[0]["hair_type_2"])?>><?=$this->translate(gettext("Brown"));?></option>
+                                                    <option value="<?=$this->translate(gettext("Chestnut"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Chestnut")), $this->record[0]["hair_type_2"])?>><?=$this->translate(gettext("Chestnut"));?></option>
+                                                    <option value="<?=$this->translate(gettext("Chestnut"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Chestnut")), $this->record[0]["hair_type_2"])?>><?=$this->translate(gettext("Chestnut"));?></option>
+                                                    <option value="<?=$this->translate(gettext("Grey"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Grey")), $this->record[0]["hair_type_2"])?>><?=$this->translate(gettext("Grey"));?></option>
+                                                    <option value="<?=$this->translate(gettext("Black"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Black")), $this->record[0]["hair_type_2"])?>><?=$this->translate(gettext("Black"));?></option>
+                                                    <option value="<?=$this->translate(gettext("Red"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Red")), $this->record[0]["hair_type_2"])?>><?=$this->translate(gettext("Black"));?></option>
+                                                    <option value="<?=$this->translate(gettext("Other"));?>"<?=RPS_Aux_FormElements::select($this->translate(gettext("Other")), $this->record[0]["hair_type_2"])?>><?=$this->translate(gettext("Black"));?></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-7" style="margin-top: 15px">
+                                    <div class="form-group input-group">
+
+                                        <span class="input-group-addon"><i class="fa fa-info-circle"></i> </span>
+                                        <input type="text" class="form-control" name="allergies" placeholder="<?=$this->translate(gettext("Allergies"));?>" value="<?=$this->record[0]["allergies"]?>"></div>
+                                </div>
+
+
+
+                                <div class="col-md-8" style="margin-top: 8px">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="out_in_the_sun" value="0">
+
+                                                <input type="checkbox"  id="out_in_the_sun" name="out_in_the_sun" value="1" onclick="toggleModal('out_in_the_sun','modal-3')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["out_in_the_sun"])?>>
+                                                <?=$this->translate(gettext("You are out in the sun or did you use self-tanning creams in the last 15 days?"));?>
+
+                                            </label>
+                                            <a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-3">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="laser_light" value="0">
+                                                <input type="checkbox" id="laser_light" name="laser_light" value="1" onclick="toggleModal('laser_light','modal-4')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["laser_light"])?>><?=$this->translate(gettext("Have you ever used laser or pulsed light?"));?>
+                                            </label>
+                                            <a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-4">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-md-7">
+                                    <br>
+                                    <p style="font-weight: bold;"><?=$this->translate(gettext("Drug information"));?></p>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="vitamines" value="0">
+                                                <input type="checkbox" id="vitamines" name="vitamines" value="1" onclick="toggleModal('vitamines','modal-5')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["vitamines"])?>><?=$this->translate(gettext("Usually you take vitamins, antidepressants or anti-acne treatment?"));?>
+                                            </label>
+                                            <a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-5">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="hormone" value="0">
+                                                <input type="checkbox" id="hormone" name="hormone" value="1" onclick="toggleModal('hormone','modal-6')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["hormone"])?>><?=$this->translate(gettext("Do you currently have hormone treatment for infertility, menopause, endometriosis or thyroid (oral or injectable)?"));?>
+                                            </label>
+                                            <a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-6">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="diabetes" value="0">
+                                                <input type="checkbox" name="diabetes" id="diabetes" value="1" onclick="toggleModal('diabetes','modal-7')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["diabetes"])?>><?=$this->translate(gettext("Do you follow a treatment for diabetes or cholesterol?"));?>
+                                            </label>
+                                            <a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-7">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <br>
+                                    <p style="font-weight: bold;"><?=$this->translate(gettext("Questions concerning your health"));?></p>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="pregnant" value="0">
+                                                <input type="checkbox" name="pregnant" id="pregnant" value="1" onclick="toggleModal('pregnant','modal-8')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["pregnant"])?>><?=$this->translate(gettext("Does it is a possibility that you are currently pregnant? Or trying to conceive?"));?>
+                                            </label>
+                                            <a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-8">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="cancer" value="0">
+                                                <input type="checkbox" name="cancer" id="cancer" value="1" onclick="toggleModal('cancer','modal-9')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["cancer"])?>><?=$this->translate(gettext("Have you ever had radiation treatments, chemotherapy due to a cancer disease?"));?>
+                                            </label>
+                                            <a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-9">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="sensitive_skin" value="0">
+                                                <input type="checkbox" name="sensitive_skin" id="sensitive_skin" value="1" onclick="toggleModal('sensitive_skin','modal-10')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["sensitive_skin"])?>><?=$this->translate(gettext("Do you have sensitive and easily irritated skin?"));?>
+                                            </label>
+                                            <a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-10">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>
+                                            <?=$this->translate(gettext("Do you have any lesions on the selected treatment area, namely:"));?>
+                                            <a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-11">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </a>
+                                        </label>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="burns" value="0">
+                                                <input type="checkbox" name="burns" id="burns" value="1" onclick="toggleModal('burns','modal-11')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["burns"])?>><?=$this->translate(gettext("inflammations, abscesses, burns?"));?>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="spots" value="0">
+                                                <input type="checkbox" name="spots" id="spots" value="1" onclick="toggleModal('spots','modal-11')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["spots"])?>><?=$this->translate(gettext("skin tumors, pigmentation spots?"));?>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="scars" value="0">
+                                                <input type="checkbox" name="scars" value="1" id="scars" onclick="toggleModal('scars','modal-11')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["scars"])?>><?=$this->translate(gettext("scars on the treatment area?"));?>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="vascular" value="0">
+                                                <input type="checkbox" name="vascular" value="1" id="vascular" onclick="toggleModal('vascular','modal-11')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["vascular"])?>><?=$this->translate(gettext("fragile areas of vascular (ease to hematoma \"blue\"), pruritus (itching, dryness)?"));?>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="tatoos" value="0">
+                                                <input type="checkbox" name="tatoos" id="tatoos" value="1" onclick="toggleModal('tatoos','modal-11')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["tatoos"])?>><?=$this->translate(gettext("tattoos on the area?"));?>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="hidden" name="circulatory" value="0">
+                                                <input type="checkbox" name="circulatory" id="circulatory" value="1" onclick="toggleModal('circulatory','modal-12')" <?=RPS_Aux_FormElements::checkbox((int) $this->record[0]["circulatory"])?>><?=$this->translate(gettext("Do you have circulatory problems, varicose veins and telangiectasia?"));?>
+                                            </label>
+                                            <a class="btn btx-xs btn-effect btn-danger" style="margin-left: 8px" data-modal="modal-12">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <label><?=$this->translate(gettext("Additional information (\"yes\" responses)"));?></label>
+                                        <textarea class="form-control" rows="4" name="info"><?=$this->record[0]["info"]?></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-left">
+                                    <button type="submit" class="btn btn-responsive btn-primary btn-lg"><?=$this->translate(gettext("Submit"));?></button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+</section>
+<?=$this->partial("partials/modals.phtml")?>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

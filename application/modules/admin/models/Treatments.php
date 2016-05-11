@@ -41,6 +41,21 @@ class Admin_Model_Treatments extends RPS_Abstract_CRUD
 
         return $rows;
     }
+
+
+    public function getAllTreatmentsByLang($locale)
+    {
+
+        $column = "description_".$locale;
+
+        $sql = $this->table->select()->from(array("treatments"),array($column));
+
+        $rows = $this->table->fetchAll($sql)->toArray();
+
+        return $rows;
+
+
+    }
     
 }
 
