@@ -189,3 +189,26 @@
 .rps-text-right {
     text-align: right;
 }
+
+.RPS-UL ul,li {
+    margin: 0;
+    padding: 0;
+}
+
+.RPS-UL ul {
+
+    display: table;
+}
+
+.RPS-UL li {
+    list-style: none;
+
+    display: table-row;
+}
+
+.RPS-UL li::before {
+
+    display: table-cell;
+    text-align: right;
+    padding-right: .3em;
+}

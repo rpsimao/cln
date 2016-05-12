@@ -60,8 +60,8 @@ class Clients_Form_Patients extends Twitter_Form
         $this->addElement($em);
 
         $or = new Zend_Form_Element_Select('origin');
-        $or->setLabel('Origin:');
-        $or->addMultiOptions(array(
+        $or->setLabel('Home Country:');
+        /*$or->addMultiOptions(array(
             ""=>"",
             gettext("Swiss") => gettext("Swiss"),
             gettext("Portuguese") => gettext("Portuguese"),
@@ -72,8 +72,9 @@ class Clients_Form_Patients extends Twitter_Form
             gettext("Maghrebian") => gettext("Maghrebian"),
             gettext("South American") => gettext("South American"),
             gettext("Other") => gettext("Other"),
-        ));
-        $or->setAttribs(array('class'=> "form-control", 'onchange'=>'setOriginAlert("'.gettext("Atention!").'","'.gettext("Make 2 joules below the basic skin type! ").'")'));
+        ));*/
+        $or->addMultiOptions($this->countries());
+        $or->setAttribs(array('class'=> "form-control", 'onchange'=>'setOriginAlert("'.$this->getView()->translate(gettext("Atention!")).'","'.$this->getView()->translate(gettext("Make 2 joules below the basic skin type! ")).'")'));
         $this->addElement($or);
 
         $nt = new Zend_Form_Element_Textarea('notes');
@@ -86,7 +87,36 @@ class Clients_Form_Patients extends Twitter_Form
         $submit->setAttrib('class', 'btn btn-clinik');
         $this->addElement($submit);
 
+
+
     }
+
+
+    private function countries()
+    {
+
+        $db = new Clients_Model_Countries();
+
+        $rows = $db->getAll();
+
+        $array = array(""=>"");
+
+        foreach ($rows as $row)
+        {
+            $array[$row["country_name"]] = $row["country_name"];
+
+        }
+
+        return $array;
+
+
+
+
+    }
+
+
+
+
 
 
 }

@@ -142,10 +142,7 @@ class Appointments_NewController extends Zend_Controller_Action
 
         foreach ($values as $value)
         {
-
             $final.= $value . ";";
-
-
         }
 
         return rtrim($final, ";");

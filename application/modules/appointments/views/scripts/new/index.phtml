@@ -1,16 +1,3 @@
-<?php if ($this->display == 1) {
-
-
-	$scripts =  $this->inlineScript();
-	$scripts->appendScript("
-	
-	$(function() {
-  		openModal('modal-1a');
-			
-});");
-
-}
-?>
 <section class="content">
 
 	<div class="row">
@@ -197,7 +184,7 @@
 								<div class="form-group input-group">
 
 										<span class="input-group-addon"><i class="fa fa-info-circle"></i> </span>
-										<input type="text" class="form-control" name="allergies" placeholder="<?=$this->translate(gettext("Allergies"));?>"></div>
+										<input type="text" class="form-control" id="allergies" name="allergies" placeholder="<?=$this->translate(gettext("Allergies"));?>"></div>
 									</div>
 
 

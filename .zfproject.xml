@@ -179,8 +179,10 @@
           <modelsDirectory>
             <dbTableDirectory>
               <dbTableFile dbTableName="Clients"/>
+              <dbTableFile dbTableName="Countries"/>
             </dbTableDirectory>
             <modelFile modelName="Clients"/>
+            <modelFile modelName="Countries"/>
           </modelsDirectory>
           <servicesDirectory enabled="false"/>
           <viewsDirectory>
