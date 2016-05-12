@@ -43,9 +43,7 @@ class RPS_Aux_ClientsAlerts
     {
 
         $info = $this->clients->findByID($this->getId());
-        $dbAl = $this->dbalerts->getOrigin();
-
-        $origin = explode(";", $dbAl);
+        
 
 
         switch (TRUE){
@@ -53,8 +51,7 @@ class RPS_Aux_ClientsAlerts
             case  $info[0]["age"] >= $this->dbalerts->getAge():
                 return TRUE;
 
-            case in_array($info[0]["origin"], $origin):
-                return TRUE;
+
         }
 
 

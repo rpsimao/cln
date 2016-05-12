@@ -1,3 +1,17 @@
+<?php if ($this->display == 1) {
+
+
+	$scripts =  $this->inlineScript();
+	$scripts->appendScript("
+ 	
+ 	$(function() {
+   		alert('".$this->translate(gettext("For this Patient make a 24H TEST"))."')
+ 			
+ });");
+
+}
+?>
+
 <section class="content">
 
 	<div class="row">
