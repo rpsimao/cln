@@ -21,17 +21,14 @@
 			<div class="panel-body">
 				<fieldset>
 					<form id="Search_for_Client"  enctype="application/x-www-form-urlencoded" role="form" action="/clients/clients/searchfor" method="post">
-						<div class="form-group input-group">
-							<span class="input-group-addon"><i class="fa fa-search"></i></span>
-							<input type="text" id="rps_text_search_client" name="rps_text_search_client" class="form-control" >
-						</div>
+
 						<div class="form-group">
 							<label><?=$this->translate(gettext("Search for:"));?></label>
-							<div class="radio">
+							<!--<div class="radio">
 								<label>
-									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"><?=$this->translate(gettext("Email"));?>
+									<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"><?/*=$this->translate(gettext("Email"));*/?>
 								</label>
-							</div>
+							</div>-->
 							<!-- For another version maybe
 							<div class="radio">
 								<label>
@@ -51,8 +48,12 @@
 							-->
 							<div class="radio">
 								<label>
-									<input type="radio" name="optionsRadios" id="optionsRadios5" value="option5"><?=$this->translate(gettext("First Name + Last Name"));?>
+									<input type="radio" name="optionsRadios" id="optionsRadios5" value="option5" checked="checked"><?=$this->translate(gettext("First Name + Last Name"));?>
 								</label>
+							</div>
+							<div class="form-group input-group">
+								<span class="input-group-addon"><i class="fa fa-search"></i></span>
+								<input type="text" id="rps_text_search_client" name="rps_text_search_client" class="form-control" >
 							</div>
 						</div>
 						<div class="form-group">

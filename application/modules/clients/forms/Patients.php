@@ -53,11 +53,11 @@ class Clients_Form_Patients extends Twitter_Form
         $mb->setAttribs(array('class'=> "form-control"));
         $this->addElement($mb);
         */
-        $em = new Zend_Form_Element_Text('email');
+        /*$em = new Zend_Form_Element_Text('email');
         $em->setLabel('Email:');
         $em->setRequired(TRUE)->setAttribs(array('class'=> "form-control"));
         $em->addValidators(array(new Zend_Validate_EmailAddress()));
-        $this->addElement($em);
+        $this->addElement($em);*/
 
         $or = new Zend_Form_Element_Select('origin');
         $or->setLabel('Home Country:');

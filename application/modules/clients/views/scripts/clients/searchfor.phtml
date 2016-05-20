@@ -9,10 +9,10 @@
 					<i class="fa fa-user"></i>
 					<?=$this->translate(gettext("Nom"))?>
 				</th>
-				<th>
+				<!--<th>
 					<i class="fa fa-envelope"></i>
-					<?=$this->translate(gettext("Email"))?>
-				</th>
+					<?/*=$this->translate(gettext("Email"))*/?>
+				</th>-->
 				<th>
 					<i class="fa fa-mobile-phone"></i>
 					<?=$this->translate(gettext("Age"))?>
@@ -33,7 +33,7 @@
 		<?php foreach ($this->results as $result):?>
 			<tr>
 				<td><?=$this->escape($result["first_name"] . " " . $result["last_name"]);?></td>
-				<td><?=$this->escape($result["email"]);?></td>
+				<!--<td><?/*=$this->escape($result["email"]);*/?></td>-->
 				<td><?=$this->escape($result["age"]);?></td>
 				<td><?=$this->escape($result["origin"]);?></td>
 				<td><a href="/clients/dashboard/<?=$this->escape($result["id"]);?>" class="btn default btn-xs red-stripe"><?=$this->translate(gettext("Select"))?></a></td>
