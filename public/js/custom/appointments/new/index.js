@@ -32,12 +32,21 @@ function alertTypeOfSkin(id) {
 
     var typeSkin = $("#"+id);
 
+    var tval = typeSkin.val();
 
-    if (typeSkin.val() == "Black" || typeSkin.val() == "Mate" || typeSkin.val() == "Noir"){
+
+    if (tval == "Fototype 4" ){
 
         openModal("modal-2");
 
-    }
+    } else if (tval == "Fototype 5") {
+
+        openModal('modal-foto5');
+
+    }  else if (tval == "Fototype 6") {
+
+        openModal('modal-foto6')
+}
     
 }
 
