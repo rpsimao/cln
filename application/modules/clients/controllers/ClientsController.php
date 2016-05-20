@@ -110,5 +110,23 @@ class Clients_ClientsController extends Zend_Controller_Action
 
     }
 
+    public function newclientalertAction()
+    {
+        $this->_helper->viewRenderer->setNoRender(true);
+        $this->_helper->layout->disableLayout();
+
+        $id = $this->_getParam("id");
+
+        $db = new Clients_Model_Countries();
+        $row = $db->checkAlert($id);
+
+
+        $this->getResponse()->appendBody($row);
+
+
+
+
+    }
+
 
 }

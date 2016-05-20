@@ -23,10 +23,31 @@ function toggleModal(id1, id2){
 function setOriginAlert(title, txt){
 
 
-    if ($("#check-rep").val() != 1) {
+    var newDiv = '<div class="col-sm-9 hr6" id="new-alert"></div>';
+    $("#form-inner-id-5").append(newDiv);
 
-        $("#form-inner-id-5").append('<div class="bs-callout bs-callout-danger"> <h4><i class="fa fa-exclamation-triangle"></i> ' + title + '</h4><p>' + txt + '</p><input id="check-rep" type="hidden" value="1"></div>');
+    var alertCli = $.post( "/clients/clients/newclientalert", { id: $("#origin").val()  } );
 
-    }
+
+    alertCli.done(function(data){
+
+
+        if( data == 1 ) {
+
+            $("#new-alert").html('<div class="bs-callout bs-callout-danger"> <h4><i class="fa fa-exclamation-triangle"></i> ' + title + '</h4><p>' + txt + '</p><input id="check-rep" type="hidden" value="1"></div>');
+
+       } else {
+
+            $("#new-alert").html("");
+        }
+    });
+
+
+
+
+
+
+    
+
 
 }

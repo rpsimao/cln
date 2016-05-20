@@ -19,6 +19,7 @@ class Countries extends Akrabat_Db_Schema_AbstractChange
             id int(11) NOT NULL AUTO_INCREMENT,
             country_code varchar(2) NOT NULL default '',
             country_name varchar(100) NOT NULL default '',
+            alert tinyint(1) NOT NULL DEFAULT '0', 
               PRIMARY KEY (id)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
         $this->_db->query($sql);
